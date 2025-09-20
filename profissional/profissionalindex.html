@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Calma Aí</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+     <h1>CALMA AÍ</h1><br>
+    <img src="https://png.pngtree.com/png-clipart/20190516/original/pngtree-users-vector-icon-png-image_3725294.jpg" alt="Foto do Psicólogo" class="profile">
+    <h2>Dr. Pedro Lima 👋</h2>
+
+  </header>
+
+  <div class="section">
+    <div class="section-title">Agenda Mensal</div>
+    <div class="calendar" id="calendar">
+      <!-- Dias do mês serão gerados aqui -->
+    </div>
+    <p class="no-selection" id="selected-day">Nenhum dia selecionado</p>
+  </div>
+
+  <div class="section">
+    <div class="section-title">Próximas Sessões</div>
+    <div class="session">07/11 - 14h com Cassia</div>
+    <div class="session">07/11 - 16h com Renata</div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">Histórico</div>
+    <div class="session">06/11 - Sessão concluída</div>
+    <div class="session">06/11 - Sessão concluída</div>
+  </div>
+
+ <!-- NOVA SEÇÃO: Novos Clientes -->
+<div class="section">
+  <div class="section-title">Novos Clientes</div>
+
+  <div class="cliente">
+    Joana Silva
+  </div>
+  <div class="action-buttons">
+    <button class="btn-aceitar">Aceitar</button>
+    <button class="btn-recusar">Recusar</button>
+  </div>
+
+  <div class="cliente">
+    Lucas Andrade
+  </div>
+  <div class="action-buttons">
+    <button class="btn-aceitar">Aceitar</button>
+    <button class="btn-recusar">Recusar</button>
+  </div>
+</div>
+
+<!-- NOVA SEÇÃO: Clientes Planos -->
+<div class="section">
+  <div class="section-title">Clientes Planos</div>
+
+  <div class="session">
+    Mariana Costa - Unimed
+  </div>
+
+  <div class="session">
+    Ricardo Souza - InterBlu
+  </div>
+</div>
+
+<!-- NOVA SEÇÃO: Clientes Particulares -->
+<div class="section">
+  <div class="section-title">Clientes Particulares</div>
+
+  <div class="session">
+    Basic
+  </div>
+
+  <div class="session">
+    Premium
+  </div>
+
+  <div class="session">
+    Plus
+  </div>
+
+  <div class="session">
+    Free
+  </div>
+</div>
+
+<!-- NOVA SEÇÃO: Fale com seus pacientes -->
+<div class="section">
+  <div class="section-title">Fale com seus pacientes</div>
+
+  <!-- Joana -->
+  <div class="chat-box">
+    <div class="chat-name">Joana Silva</div>
+    <div class="chat-input">
+      <input type="text" placeholder="Escreva uma mensagem..." />
+      <button>Enviar</button>
+    </div>
+  </div>
+
+  <!-- Lucas -->
+  <div class="chat-box">
+    <div class="chat-name">Lucas Andrade</div>
+    <div class="chat-input">
+      <input type="text" placeholder="Escreva uma mensagem..." />
+      <button>Enviar</button>
+    </div>
+  </div>
+
+  <!-- Mariana -->
+  <div class="chat-box">
+    <div class="chat-name">Mariana Costa</div>
+    <div class="chat-input">
+      <input type="text" placeholder="Escreva uma mensagem..." />
+      <button>Enviar</button>
+    </div>
+  </div>
+
+  <!-- Ricardo -->
+  <div class="chat-box">
+    <div class="chat-name">Ricardo Souza</div>
+    <div class="chat-input">
+      <input type="text" placeholder="Escreva uma mensagem..." />
+      <button>Enviar</button>
+    </div>
+  </div>
+</div>
+
+
+  <script>
+    const calendar = document.getElementById('calendar');
+    const selectedDay = document.getElementById('selected-day');
+
+    for (let i = 1; i <= 30; i++) {
+      const day = document.createElement('div');
+      day.textContent = i;
+      day.addEventListener('click', () => {
+        selectedDay.textContent = `Dia selecionado: ${i < 10 ? '0' + i : i}/09`;
+      });
+      calendar.appendChild(day);
+    }
+  </script>
+
+</body>
+</html>
+
+
+
+

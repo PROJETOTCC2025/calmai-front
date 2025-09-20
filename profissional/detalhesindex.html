@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalhes da Consulta</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="profissional">
+                <img src="foto-profissional.jpg" alt="Foto do Profissional" class="foto">
+                <h1>Dr. João Silva</h1>
+            </div>
+        </header>
+
+        <section class="detalhes-consulta">
+            <h2>Detalhes da Consulta</h2>
+            <div id="consultaDetalhes">
+                <!-- Detalhes dos pacientes serão carregados aqui -->
+            </div>
+        </section>
+    </div>
+
+    <script>
+        // Captura o parâmetro "day" da URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const day = urlParams.get('day');
+
+        // Dados fictícios de pacientes por dia
+        const consultas = {
+            3: [{ nome: "João Souza", horario: "14:00" }, { nome: "Ana Costa", horario: "15:30" }],
+            4: [{ nome: "Carlos Silva", horario: "09:00" }, { nome: "Maria Oliveira", horario: "11:00" }],
+            5: [{ nome: "Pedro Lima", horario: "10:00" }, { nome: "Julia Pereira", horario: "12:30" }],
+            12: [{ nome: "Ricardo Santos", horario: "13:00" }, { nome: "Larissa Gomes", horario: "14:30" }],
+            14: [{ nome: "Lucas Pereira", horario: "16:00" }, { nome: "Patricia Costa", horario: "17:30" }],
+            18: [{ nome: "Fernanda Souza", horario: "08:30" }, { nome: "Marcio Almeida", horario: "10:00" }],
+            19: [{ nome: "Eduardo Rocha", horario: "09:30" }, { nome: "Roberta Silva", horario: "11:30" }],
+            20: [{ nome: "Mariana Lima", horario: "13:00" }, { nome: "Gustavo Fernandes", horario: "14:00" }],
+            21: [{ nome: "Eliane Costa", horario: "15:00" }, { nome: "Felipe Almeida", horario: "16:30" }],
+            25: [{ nome: "Tatiane Souza", horario: "09:00" }, { nome: "José Santos", horario: "11:00" }],
+            26: [{ nome: "Raquel Oliveira", horario: "10:00" }, { nome: "Lucas Gomes", horario: "12:30" }]
+        };
+
+        // Exibir os detalhes do paciente para o dia clicado
+        if (day && consultas[day]) {
+            let detalhesHTML = `<p><strong>Consultas para o dia ${day}:</strong></p>`;
+            consultas[day].forEach(consulta => {
+                detalhesHTML += `
+                    <p><strong>Paciente:</strong> ${consulta.nome}</p>
+                    <p><strong>Horário:</strong> ${consulta.horario}</p>
+                `;
+            });
+            document.getElementById('consultaDetalhes').innerHTML = detalhesHTML;
+        } else {
+            document.getElementById('consultaDetalhes').innerHTML = "<p>Sem consultas para este dia.</p>";
+        }
+    </script>
+</body>
+</html>
+
+

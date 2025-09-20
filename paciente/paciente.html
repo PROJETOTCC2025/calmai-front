@@ -1,0 +1,61 @@
+!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calma Aí - Usuário</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+        <h1>CALMA AÍ</h1>
+      <h2>Olá, Aline 👋</h2>
+      <p class="slogan">Seu espaço de calma e apoio emocional</p>
+    </header>
+
+    <!-- Agenda -->
+    <section class="secao">
+  <h2>Agenda Mensal</h2>
+  <div id="calendario" class="calendario"></div>
+  <p id="dataSelecionada" class="data-info">Nenhum dia selecionado</p>
+</section>
+
+    <!-- Próximas sessões -->
+    <section class="secao">
+      <h2>Próximas Sessões</h2>
+      <ul id="proximas-sessoes">
+        <li>20/09 - 14h com Dra. Ana</li>
+        <li>27/09 - 10h com Dr. João</li>
+      </ul>
+    </section>
+
+    <!-- Histórico -->
+    <section class="secao">
+      <h2>Histórico</h2>
+      <ul>
+        <li>13/09 - Sessão concluída</li>
+        <li>06/09 - Sessão concluída</li>
+      </ul>
+    </section>
+
+    <!-- Botão de agendamento -->
+    <button class="btn agendar" onclick="agendarSessao()">Agendar nova sessão</button>
+
+    <!-- Mapa de humor -->
+    <section class="secao">
+      <h2>Mapa de Humor</h2>
+      <div class="humor">
+        <p>😊 😐 😢 😠</p>
+        <p>Último registro: 14/09 - 😊</p>
+        <button onclick="registrarHumor()">Registrar humor</button>
+      </div>
+    </section>
+
+    <!-- Botão de urgência -->
+    <button class="btn urgencia" onclick="acionarUrgencia()">🚨 Atendimento Imediato</button>
+  </div>
+
+  <script src="usuario.js"></script>
+</body>
+</html>
