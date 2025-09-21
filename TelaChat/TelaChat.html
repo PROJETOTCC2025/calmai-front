@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calma Aí - Chat com IA</title>
+  <link rel="stylesheet" href="chat.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+        <H1>Calma Aí - Chat com IA</H1>
+      <h1>Olá, Aline 👋</h1>
+      <p class="slogan">Vamos começar com algumas perguntas para te conhecer melhor.</p>
+    </header>
+
+    <div id="chat" class="chat-box"></div>
+
+    <div class="input-area">
+      <input type="text" id="mensagemInput" placeholder="Digite sua resposta..." />
+      <button onclick="responder()">Enviar</button>
+    </div>
+
+    <button class="btn urgencia" onclick="acionarUrgencia()">🚨 Atendimento Imediato</button>
+  </div>
+
+  <script src="chat.js"></script>
+</body>
+</html>
