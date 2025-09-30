@@ -1,0 +1,118 @@
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #e9dbd8;
+      color: #333;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 20px;
+      background-color: #fff;
+    }
+
+    header h1 {
+      color: #0a73c0;
+      font-size: 1.2rem;
+    }
+
+    header button {
+      padding: 5px 10px;
+      border: 1px solid #333;
+      border-radius: 5px;
+      background: #fff;
+      cursor: pointer;
+    }
+
+    .logo-section {
+      text-align: center;
+      padding: 20px;
+    }
+
+    .logo-section img {
+      width: 120px;
+    }
+
+    .logo-section h2 {
+      margin: 10px 0;
+      font-size: 1.3rem;
+    }
+
+    .form-section {
+      text-align: center;
+      padding: 20px;
+    }
+
+    .form-section h3 {
+      margin-bottom: 10px;
+      font-size: 1.1rem;
+    }
+
+    .form-section p {
+      font-size: 0.9rem;
+      margin-bottom: 20px;
+    }
+
+    form {
+      max-width: 400px;
+      margin: 0 auto;
+      background: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    form input, form textarea {
+      width: 100%;
+      padding: 10px;
+      margin: 8px 0;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 0.9rem;
+    }
+
+    form textarea {
+      resize: none;
+      height: 80px;
+    }
+
+    form button {
+      width: 100%;
+      padding: 12px;
+      background: #333;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    form button:hover {
+      background: #555;
+    }
+
+    .contacts {
+      text-align: center;
+      margin: 20px auto;
+      padding: 10px;
+      max-width: 400px;
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    .contacts p {
+      margin: 5px 0;
+      font-size: 0.95rem;
+    }
+
+    footer {
+      text-align: center;
+      font-size: 0.8rem;
+      margin: 10px;
+    }
+  
