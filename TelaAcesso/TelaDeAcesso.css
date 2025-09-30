@@ -1,0 +1,130 @@
+/* Estilo geral */
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: #F5EDE4; /* tom nude claro */
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+}
+
+/* Container principal */
+.container {
+  width: 100%;
+  max-width: 400px;
+  padding: 20px;
+  text-align: center;
+}
+
+/* Imagem menor e centralizada */
+.imagem-topo {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.imagem-jovem {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+/* Título e slogan */
+h1 {
+  font-size: 26px;
+  color: #8B5E3C;
+  margin-bottom: 5px;
+}
+
+.slogan {
+  color: #7D6E63;
+  margin-bottom: 25px;
+  font-size: 15px;
+}
+
+/* Campos de entrada */
+.input-group {
+  text-align: left;
+  margin-bottom: 15px;
+}
+
+.input-group label {
+  display: block;
+  margin-bottom: 5px;
+  color: #5D4A3C;
+  font-size: 14px;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #C2B8AE;
+  border-radius: 5px;
+  background-color: #FAF6F2;
+}
+
+/* Link de senha */
+.forgot {
+  display: block;
+  margin-bottom: 15px;
+  color: #A67C52;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+/* Botões */
+.btn {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+.primary {
+  background-color: #A67C52;
+  color: white;
+}
+
+.secondary {
+  background-color: white;
+  color: #A67C52;
+  border: 2px solid #A67C52;
+}
+
+.google {
+  background-color: #8B5E3C;
+  color: white;
+}
+
+/* Responsividade */
+@media (max-width: 600px) {
+  .container {
+    padding: 15px;
+  }
+
+  h1 {
+    font-size: 22px;
+  }
+
+  .imagem-jovem {
+    width: 100px;
+    height: 100px;
+  }
+
+  .btn {
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  .input-group input {
+    font-size: 14px;
+  }
+}
+
+
+

@@ -1,0 +1,143 @@
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: #F5EDE4;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 400px;
+  margin: auto;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+h1 {
+  font-size: 24px;
+  color: #8B5E3C;
+  margin-bottom: 5px;
+}
+
+.slogan {
+  color: #7D6E63;
+  font-size: 14px;
+}
+
+/* Área do chat */
+.chat-box {
+  flex: 1;
+  background-color: #FAF6F2;
+  border: 1px solid #C2B8AE;
+  border-radius: 8px;
+  padding: 10px;
+  overflow-y: auto;
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.mensagem {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  max-width: 90%;
+}
+
+.mensagem img {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+}
+
+.mensagem .texto {
+  padding: 8px 12px;
+  border-radius: 8px;
+  font-size: 14px;
+}
+
+.mensagem.ia .texto {
+  background-color: #EADAC8;
+  color: #5D4A3C;
+}
+
+.mensagem.usuario {
+  flex-direction: row-reverse;
+  align-self: flex-end;
+}
+
+.mensagem.usuario .texto {
+  background-color: #A67C52;
+  color: white;
+}
+
+/* Campo de entrada */
+.input-area {
+  display: flex;
+  gap: 10px;
+}
+
+.input-area input {
+  flex: 1;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #C2B8AE;
+  background-color: #FAF6F2;
+}
+
+.input-area button {
+  padding: 10px 15px;
+  background-color: #A67C52;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+/* Botão de urgência */
+.btn.urgencia {
+  margin-top: 10px;
+  background-color: #8B0000;
+  color: white;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* Responsivo */
+@media (max-width: 600px) {
+  h1 {
+    font-size: 20px;
+  }
+
+  .input-area input {
+    font-size: 14px;
+  }
+
+  .input-area button {
+    font-size: 14px;
+  }
+
+  .btn.urgencia {
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  .mensagem img {
+    width: 28px;
+    height: 28px;
+  }
+
+  .mensagem .texto {
+    font-size: 13px;
+  }
+}

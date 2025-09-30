@@ -178,3 +178,32 @@ button.btn-recusar:hover {
 .chat-input button:hover {
   background-color: #92c29d;
 }
+
+#calendar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.day {
+  width: 40px;
+  height: 40px;
+  background-color: #f0f0f0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: background 0.3s;
+  font-weight: bold;
+}
+
+.day:hover {
+  background-color: #ddd;
+}
+
+#selected-day {
+  margin-top: 10px;
+  font-style: italic;
+}
