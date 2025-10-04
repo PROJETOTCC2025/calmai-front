@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Planos - Calma Aí</title>
+  <link rel="stylesheet" href="planos.css">
+
+   <header>
+    <header>
+        <h1>Planos Disponíveis</h1>
+        <p>Escolha o plano ideal para você</p>
+      </header>
+    
+      <div class="planos-container">
+        <!-- Plano Basic -->
+        <div class="plano">
+          <div class="plano-title">Basic</div>
+          <div class="plano-description">
+            Inclui <strong>1 sessão por semana</strong>, com um <strong>cancelamento grátis por mês</strong>.
+          </div>
+          <button class="btn-assinar" onclick="assinarPlano('Basic')">Assinar</button>
+        </div>
+    
+        <!-- Plano Premium -->
+        <div class="plano">
+          <div class="plano-title">Premium</div>
+          <div class="plano-description">
+            Inclui <strong>2 sessões por semana</strong>, com direito a <strong>2 cancelamentos grátis por mês</strong>.
+          </div>
+          <button class="btn-assinar" onclick="assinarPlano('Premium')">Assinar</button>
+        </div>
+    
+        <!-- Plano Plus -->
+        <div class="plano">
+          <div class="plano-title">Plus</div>
+          <div class="plano-description">
+            Agende <strong>quantas sessões quiser por semana</strong>, com <strong>cancelamentos ilimitados sem taxa extra</strong>.
+          </div>
+          <button class="btn-assinar" onclick="assinarPlano('Plus')">Assinar</button>
+        </div>
+    
+        <!-- Plano Free -->
+        <div class="plano">
+          <div class="plano-title">Free</div>
+          <div class="plano-description">
+            Inclui <strong>1 sessão gratuita</strong> sem compromisso.
+          </div>
+          <button class="btn-assinar" onclick="assinarPlano('Free')">Assinar</button>
+        </div>
+      </div>
+    
+      <script>
+        function assinarPlano(plano) {
+          alert("Você escolheu o plano: " + plano);
+          // Aqui você pode redirecionar, enviar dados para o backend, etc.
+        }
+      </script>
+    </body>
+    </html>

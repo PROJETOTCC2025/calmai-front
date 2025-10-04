@@ -1,0 +1,80 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f7ebdf;
+    color: #5e4b3c;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+  }
+
+  header {
+    padding: 20px;
+  }
+
+  h1 {
+    font-size: 28px;
+    margin-bottom: 10px;
+  }
+
+  .planos-container {
+    display: flex;
+    flex-direction: column; /* Força os planos a ficarem um embaixo do outro */
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+  }
+
+  .plano {
+    background-color: #fff6ee;
+    border: 1px solid #e3d0c0;
+    border-radius: 10px;
+    padding: 20px;
+    width: 90%;
+    max-width: 400px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+
+  .plano:hover {
+    transform: scale(1.02);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+  }
+
+  .plano-title {
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: #5e4b3c;
+  }
+
+  .plano-description {
+    font-size: 16px;
+    color: #6f5847;
+    line-height: 1.5;
+    margin-bottom: 15px;
+  }
+
+  .btn-assinar {
+    background-color: #5e4b3c;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  .btn-assinar:hover {
+    background-color: #7a6351;
+  }
+
+  @media (max-width: 600px) {
+    .plano {
+      width: 95%;
+    }
+
+    .btn-assinar {
+      width: 100%;
+    }
+  } body
