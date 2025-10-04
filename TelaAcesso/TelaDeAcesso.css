@@ -101,6 +101,11 @@ h1 {
   color: white;
 }
 
+.voltar {
+  background-color: #8B5E3C;
+  color: white;
+}
+
 /* Responsividade */
 @media (max-width: 600px) {
   .container {
