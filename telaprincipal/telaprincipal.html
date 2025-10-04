@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Página Principal</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f8f5f2; /* fundo clean bege/marrom claro */
+      color: #4b3621; /* marrom escuro */
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      background-color: #d9c3a6; /* marrom claro */
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    header h1 {
+      font-size: 1.5rem;
+      margin: 0;
+    }
+
+    nav a {
+      margin: 0 1rem;
+      text-decoration: none;
+      color: #4b3621;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #7a5c3f;
+    }
+
+    .btn-banco {
+      background-color: #7a5c3f;
+      color: #fff;
+      padding: 0.7rem 1.2rem;
+      border: none;
+      border-radius: 8px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .btn-banco:hover {
+      background-color: #5c432f;
+    }
+
+    main {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: calc(100vh - 70px);
+      text-align: center;
+      padding: 2rem;
+    }
+
+    main h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    main p {
+      font-size: 1.2rem;
+      max-width: 600px;
+    }
+
+    main img {
+      margin-top: 20px;
+      width: 300px;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>CalmaAi</h1>
+    <nav>
+      <a href="../TelaPaciente/TelaPaciente.html">Paciente</a>
+      <a href="TelaProfissional.html">Profissional</a>
+      <a href="../telaLogin/login.html">Login</a>
+      <a href="..//planosuser/planos.html">Planos</a>
+      <a href="../faleconosco/faleconosco.html">Fale conosco</a>
+      <a href="../botaopanico/panico.html">
+        <button class="btn-banco">Pânico</button>
+      </a>
+     
+    </nav>
+  </header>
+
+  <main>
+    <h2>Bem-vindo ao Meu Site</h2>
+    <p>Escolha seu perfil, acesse os planos ou faça login. Tudo em um só lugar, com simplicidade e estilo clean.</p>
+    <!-- imagem clean -->
+    <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e" alt="Imagem de paz - mar calmo e céu" />
+  </main>
+</body>
+</html>
