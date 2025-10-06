@@ -1,0 +1,103 @@
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: #F5EDE4;
+  margin: 0;
+  padding-bottom: 60px;
+}
+
+.container {
+  padding: 20px;
+  text-align: center;
+}
+
+header h1 {
+  color: #8B5E3C;
+  font-size: 24px;
+  margin-bottom: 5px;
+}
+
+.slogan {
+  color: #7D6E63;
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+.menu-praticas {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.menu-praticas button {
+  padding: 12px;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  background-color: #A67C52;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.menu-praticas button:hover {
+  background-color: #8B5E3C;
+}
+
+.conteudo {
+  background-color: #FAF6F2;
+  padding: 15px;
+  border-radius: 8px;
+  color: #5D4A3C;
+  font-size: 15px;
+}
+
+/* Menu inferior fixo estilo app */
+.menu-app {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #A67C52;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 6px 0;
+  box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+
+.menu-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  color: white;
+  font-size: 12px;
+  width: 25%;
+}
+
+.menu-item span {
+  font-size: 18px;
+}
+
+.menu-item p {
+  margin: 4px 0 0;
+}
+
+/* Responsivo */
+@media (max-width: 480px) {
+  .menu-praticas button {
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  .menu-item span {
+    font-size: 16px;
+  }
+
+  .menu-item p {
+    font-size: 10px;
+  }
+}

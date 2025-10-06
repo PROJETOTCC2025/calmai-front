@@ -1,0 +1,39 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Calma Aí - Boas Práticas</title>
+  <link rel="stylesheet" href="boas-praticas.css" />
+</head>
+<body>
+  <main class="container">
+    <header>
+      <h1>Guia de Boas Práticas</h1>
+      <p class="slogan">Cuide do seu bem-estar com hábitos saudáveis</p>
+    </header>
+
+    <section class="menu-praticas">
+      <button onclick="mostrarConteudo('respiracao')">🌬️ Respiração</button>
+      <button onclick="mostrarConteudo('yoga')">🧘 Yoga</button>
+      <button onclick="mostrarConteudo('alimentacao')">🥗 Alimentação</button>
+      <button onclick="mostrarConteudo('sono')">😴 Sono</button>
+      <button onclick="mostrarConteudo('humor')">📊 Mapa de Humor</button>
+    </section>
+
+    <section id="conteudo" class="conteudo">
+      <p>Selecione uma prática para ver as dicas.</p>
+    </section>
+  </main>
+
+  <nav class="menu-app">
+    <a href="#inicio" class="menu-item"><span>🏠</span><p>Início</p></a>
+    <a href="#panico" class="menu-item"><span>🚨</span><p>Pânico</p></a>
+    <a href="#fale-conosco" class="menu-item"><span>📞</span><p>Contato</p></a>
+    <a href="#chat" class="menu-item"><span>💬</span><p>Chat</p></a>
+  </nav>
+
+  <script src="boas-praticas.js"></script>
+</body>
+</html>

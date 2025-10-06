@@ -83,28 +83,40 @@ h1 {
   font-weight: bold;
   margin-bottom: 10px;
   cursor: pointer;
+  display: block;
 }
 
 .primary {
   background-color: #A67C52;
   color: white;
+  display: block ;
+  width: 100%;
 }
 
 .secondary {
   background-color: white;
   color: #A67C52;
   border: 2px solid #A67C52;
+  display: block;
 }
 
 .google {
   background-color: #8B5E3C;
   color: white;
+  display: block;
+  align-content: center;
+  justify-content: center;
 }
 
-.voltar {
+.Voltar {
   background-color: #8B5E3C;
   color: white;
+ display: flex;
+  align-items: center;
+  justify-content: center;  
 }
+
+
 
 /* Responsividade */
 @media (max-width: 600px) {
@@ -116,7 +128,7 @@ h1 {
     font-size: 22px;
   }
 
-  .imagem-jovem {
+  .imagem-ia {
     width: 100px;
     height: 100px;
   }
