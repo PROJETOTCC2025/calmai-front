@@ -1,161 +1,134 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>Calma Aí</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css" />
 </head>
-
 <body>
-
   <header>
-    <h1>CALMA AÍ</h1><br>
-    <img src="https://png.pngtree.com/png-clipart/20190516/original/pngtree-users-vector-icon-png-image_3725294.jpg"
-      alt="Foto do Psicólogo" class="profile">
+    <h1>CALMA AÍ</h1>
+    <img src="https://png.pngtree.com/png-clipart/20190516/original/pngtree-users-vector-icon-png-image_3725294.jpg" alt="Foto do Psicólogo" class="profile" />
     <h2>Dr. Pedro Lima 👋</h2>
   </header>
 
   <main>
-
-
-
+    <!-- CALENDÁRIO -->
     <div class="section">
       <div class="section-title">Agenda Mensal</div>
 
-      <!-- Cabeçalho com os dias da semana -->
       <div class="calendar-header">
-        <div>Dom</div>
-        <div>Seg</div>
-        <div>Ter</div>
-        <div>Qua</div>
-        <div>Qui</div>
-        <div>Sex</div>
-        <div>Sab</div>
+        <div>Dom</div><div>Seg</div><div>Ter</div><div>Qua</div><div>Qui</div><div>Sex</div><div>Sab</div>
       </div>
 
-      <!-- Calendário dos dias -->
-      <div class="calendar" id="calendar">
-        <!-- Dias do mês serão gerados aqui via JS -->
-      </div>
-
+      <div class="calendar" id="calendar"></div>
       <p class="no-selection" id="selected-day">Nenhum dia selecionado</p>
     </div>
 
+    <!-- PRÓXIMAS SESSÕES -->
     <div class="section">
       <div class="section-title">Próximas Sessões</div>
-      <div class="session">07/11 - 14h com Cassia</div>
-      <div class="session">07/11 - 16h com Renata</div>
+      <div class="session">07/11 - 14h com Cassia Starling</div>
+      <div class="session">07/11 - 16h com Renata Brunner</div>
     </div>
 
+    <!-- HISTÓRICO DE SESSÕES -->
     <div class="section">
       <div class="section-title">Histórico</div>
-      <div class="session">06/11 - Sessão concluída</div>
-      <div class="session">06/11 - Sessão concluída</div>
+      <div class="session">06/11 - Sessão concluída com Marcelo Oliveira</div>
+      <div class="session">06/11 - Sessão concluída com Maria Luiza P.</div>
     </div>
 
+    <!-- NOVOS CLIENTES -->
     <div class="section">
       <div class="section-title">Novos Clientes</div>
-
-      <div class="cliente">Joana Silva</div>
-      <div class="action-buttons">
-        <button class="btn-aceitar">Aceitar</button>
-        <button class="btn-recusar">Recusar</button>
-      </div>
-
-      <div class="cliente">Lucas Andrade</div>
-      <div class="action-buttons">
-        <button class="btn-aceitar">Aceitar</button>
-        <button class="btn-recusar">Recusar</button>
-      </div>
+      <table class="clientes-tabela">
+        <tr>
+          <th>Nome</th>
+          <th>Ações</th>
+        </tr>
+        <tr>
+          <td>Joana Silva</td>
+          <td>
+            <button class="btn-aceitar">Aceitar</button>
+            <button class="btn-recusar">Recusar</button>
+          </td>
+        </tr>
+        <tr>
+          <td>Lucas Andrade</td>
+          <td>
+            <button class="btn-aceitar">Aceitar</button>
+            <button class="btn-recusar">Recusar</button>
+          </td>
+        </tr>
+        <tr>
+          <td>Mariana Costa</td>
+          <td>
+            <button class="btn-aceitar">Aceitar</button>
+            <button class="btn-recusar">Recusar</button>
+          </td>
+        </tr>
+        <tr>
+          <td>Ricardo Souza</td>
+          <td>
+            <button class="btn-aceitar">Aceitar</button>
+            <button class="btn-recusar">Recusar</button>
+          </td>
+        </tr>
+      </table>
     </div>
 
+    <!-- FALE COM SEUS PACIENTES -->
     <div class="section">
-      <div class="section-title">Clientes Planos</div>
-      <div class="session">Mariana Costa - Unimed</div>
-      <div class="session">Ricardo Souza - InterBlu</div>
+      <div class="section-title">Fale com seus pacientes</div>
+      <table class="clientes-tabela">
+        <tr>
+          <th>Nome</th>
+          <th>Mensagem</th>
+        </tr>
+        <tr>
+          <td>Cassia Starling</td>
+          <td>
+            <input type="text" placeholder="Escreva uma mensagem..." />
+            <button onclick="enviarMensagem(this)">Enviar</button>
+          </td>
+        </tr>
+        <tr>
+          <td>Lucas Pereira</td>
+          <td>
+            <input type="text" placeholder="Escreva uma mensagem..." />
+            <button onclick="enviarMensagem(this)">Enviar</button>
+          </td>
+        </tr>
+        <tr>
+          <td>Renata Brunner</td>
+          <td>
+            <input type="text" placeholder="Escreva uma mensagem..." />
+            <button onclick="enviarMensagem(this)">Enviar</button>
+          </td>
+        </tr>
+        <tr>
+          <td>Rodrigo Tadra</td>
+          <td>
+            <input type="text" placeholder="Escreva uma mensagem..." />
+            <button onclick="enviarMensagem(this)">Enviar</button>
+          </td>
+        </tr>
+      </table>
     </div>
-
-    <!-- Clientes Particulares -->
-<div class="section">
-  <div class="section-title">Clientes Particulares</div>
-
-  <div class="plan" onclick="toggleCliente('basic')">Basic</div>
-  <div class="cliente-nome" id="basic" style="display: none;">Cassia</div>
-
-  <div class="plan" onclick="toggleCliente('premium')">Premium</div>
-  <div class="cliente-nome" id="premium" style="display: none;">Joana Silva</div>
-
-  <div class="plan" onclick="toggleCliente('plus')">Plus</div>
-  <div class="cliente-nome" id="plus" style="display: none;">Renata</div>
-
-  <div class="plan" onclick="toggleCliente('free')">Free</div>
-  <div class="cliente-nome" id="free" style="display: none;">Lucas Andrade</div>
-</div>
-
-
-    <!-- Fale com seus pacientes -->
-<div class="section">
-  <div class="section-title">Fale com seus pacientes</div>
-
-  <!-- Joana -->
-  <div class="chat-box" data-nome="Joana Silva">
-    <div class="chat-name">Joana Silva</div>
-    <div class="chat-messages"></div>
-    <div class="chat-input">
-      <input type="text" placeholder="Escreva uma mensagem..." />
-      <button onclick="enviarMensagem(this)">Enviar</button>
-    </div>
-  </div>
-
-  <!-- Lucas -->
-  <div class="chat-box" data-nome="Lucas Andrade">
-    <div class="chat-name">Lucas Andrade</div>
-    <div class="chat-messages"></div>
-    <div class="chat-input">
-      <input type="text" placeholder="Escreva uma mensagem..." />
-      <button onclick="enviarMensagem(this)">Enviar</button>
-    </div>
-  </div>
-
-  <!-- Mariana -->
-  <div class="chat-box" data-nome="Mariana Costa">
-    <div class="chat-name">Mariana Costa</div>
-    <div class="chat-messages"></div>
-    <div class="chat-input">
-      <input type="text" placeholder="Escreva uma mensagem..." />
-      <button onclick="enviarMensagem(this)">Enviar</button>
-    </div>
-  </div>
-
-  <!-- Ricardo -->
-  <div class="chat-box" data-nome="Ricardo Souza">
-    <div class="chat-name">Ricardo Souza</div>
-    <div class="chat-messages"></div>
-    <div class="chat-input">
-      <input type="text" placeholder="Escreva uma mensagem..." />
-      <button onclick="enviarMensagem(this)">Enviar</button>
-    </div>
-  </div>
-</div>
-
-
   </main>
 
   <script>
+    // CALENDÁRIO
     const calendar = document.getElementById('calendar');
     const selectedDay = document.getElementById('selected-day');
 
     const sessoesPorDia = {
-      7: "14h com Cassia, 16h com Renata",
-      10: "13h com João",
-      15: "09h com Camila",
-      21: "17h com Tiago",
-      30: "08h com Fernanda"
+      7: "14h com Cassia, 16h com Renata"
     };
 
-    const primeiroDiaSemana = 6; // sábado
     const totalDiasMes = 30;
+    const primeiroDiaSemana = new Date(2025, 10, 1).getDay(); // Novembro (mês 10)
 
     for (let i = 0; i < primeiroDiaSemana; i++) {
       const empty = document.createElement('div');
@@ -168,131 +141,43 @@
       day.textContent = i;
 
       day.addEventListener('click', () => {
-        let texto = Dia selecionado: ${i < 10 ? '0' + i : i}/11;
-        texto += sessoesPorDia[i] ? ` — Sessões: ${sessoesPorDia[i]}` : ` — Nenhuma sessão marcada.`;
+        let texto = `Dia selecionado: ${i < 10 ? '0' + i : i}/11`;
+        texto += sessoesPorDia[i] ? ` — Sessões: ${sessoesPorDia[i]}` : ` — Nenhuma sessão agendada.`;
         selectedDay.textContent = texto;
       });
 
       calendar.appendChild(day);
     }
-  </script>
 
-  <script>
+    // BOTÕES ACEITAR / RECUSAR
     const aceitarBtns = document.querySelectorAll('.btn-aceitar');
     const recusarBtns = document.querySelectorAll('.btn-recusar');
 
-    aceitarBtns.forEach((btn) => {
+    aceitarBtns.forEach(btn => {
       btn.addEventListener('click', () => {
-        const nomeCliente = btn.closest('.action-buttons').previousElementSibling.textContent.trim();
-        alert(Cliente ${nomeCliente} aceito com sucesso!);
-        removerCliente(btn);
+        const nome = btn.closest('tr').children[0].textContent;
+        alert(`Cliente ${nome} aceito com sucesso!`);
       });
     });
 
-    recusarBtns.forEach((btn) => {
+    recusarBtns.forEach(btn => {
       btn.addEventListener('click', () => {
-        const nomeCliente = btn.closest('.action-buttons').previousElementSibling.textContent.trim();
-        alert(Cliente ${nomeCliente} recusado.);
-        removerCliente(btn);
+        const nome = btn.closest('tr').children[0].textContent;
+        alert(`Cliente ${nome} recusado.`);
       });
     });
 
-    function removerCliente(button) {
-      const clienteDiv = button.closest('.action-buttons').previousElementSibling;
-      const actionDiv = button.closest('.action-buttons');
+    // MENSAGEM PARA PACIENTE
+    function enviarMensagem(button) {
+      const input = button.previousElementSibling;
+      const mensagem = input.value.trim();
+      const nomePaciente = button.closest('tr').children[0].textContent;
 
-      if (clienteDiv && actionDiv) {
-        clienteDiv.remove();
-        actionDiv.remove();
-      }
+      if (mensagem === "") return;
+
+      alert(`Mensagem enviada para ${nomePaciente}: \"${mensagem}\"`);
+      input.value = "";
     }
   </script>
-
-  <script>
-  function toggleCliente(planId) {
-    const div = document.getElementById(planId);
-    if (div.style.display === "none" || div.style.display === "") {
-      div.style.display = "block";
-    } else {
-      div.style.display = "none";
-    }
-  }
-
-  
-  function enviarMensagem(button) {
-    const input = button.previousElementSibling;
-    const mensagem = input.value.trim();
-
-    if (mensagem === "") return;
-
-    const chatBox = button.closest(".chat-box");
-    const nomePaciente = chatBox.dataset.nome;
-    const messagesContainer = chatBox.querySelector(".chat-messages");
-
-    // Cria a mensagem do psicólogo
-    const minhaMensagem = document.createElement("div");
-    minhaMensagem.classList.add("chat-message");
-    minhaMensagem.textContent = mensagem;
-    minhaMensagem.style.alignSelf = "flex-end";
-    minhaMensagem.style.backgroundColor = "#d9f1df"; // verde claro
-
-    messagesContainer.appendChild(minhaMensagem);
-    input.value = "";
-    messagesContainer.scrollTop = messagesContainer.scrollHeight;
-
-    // Simula resposta do paciente após 2 segundos
-    setTimeout(() => {
-      const resposta = gerarRespostaAutomatica(nomePaciente);
-
-      const respostaMsg = document.createElement("div");
-      respostaMsg.classList.add("chat-message");
-      respostaMsg.textContent = resposta;
-      respostaMsg.style.alignSelf = "flex-start";
-      respostaMsg.style.backgroundColor = "#f0f0f0";
-      respostaMsg.style.color = "#444";
-
-      messagesContainer.appendChild(respostaMsg);
-      messagesContainer.scrollTop = messagesContainer.scrollHeight;
-    }, 2000);
-  }
-
-  function gerarRespostaAutomatica(nome) {
-    const respostas = {
-      "Joana Silva": [
-        "Olá! Estou bem, e você?",
-        "Obrigada pela mensagem, doutor.",
-        "Podemos conversar mais tarde?"
-      ],
-      "Lucas Andrade": [
-        "Oi, tudo certo por aqui!",
-        "Preciso remarcar minha sessão.",
-        "Obrigado pelo contato."
-      ],
-      "Mariana Costa": [
-        "Oi doutor, tudo ótimo!",
-        "Gostaria de mudar meu plano.",
-        "Estou ansiosa pela próxima sessão!"
-      ],
-      "Ricardo Souza": [
-        "Boa tarde!",
-        "Tudo indo bem, obrigado!",
-        "A sessão de ontem foi excelente."
-      ]
-    };
-
-    const mensagens = respostas[nome] || ["Olá!"];
-    const indice = Math.floor(Math.random() * mensagens.length);
-    return mensagens[indice];
-  }
-
-
-</script>
-
-
 </body>
-
 </html>
-
-
-
-
