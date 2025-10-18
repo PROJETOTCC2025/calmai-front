@@ -1,0 +1,77 @@
+```html
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Botão do Pânico</title>
+  <link rel="stylesheet" href="panico.css">
+</head>
+<body>
+
+  <button class="sound-toggle" id="soundBtn" title="Ativar som">🔈</button>
+
+  <audio id="calmSound" loop>
+    <!-- Substitua este link por um som relaxante do seu servidor -->
+    <source src="https://video.zig.ht/v/d56dqvfk3ajd0b3jp1pjo" type="audio/mpeg">
+  </audio>
+
+  <div class="container">
+    <div class="safe-text">Respire fundo... você está em um lugar seguro.</div>
+
+    <div class="calm-box">
+      <div class="breath-circle"></div>
+      <div class="breath-text" id="breathText">Inspire pelo nariz...</div>
+    </div>
+
+    <div class="help-buttons">
+      <button class="btn-help" onclick="alert('Chamando atendimento imediato...')">
+        Preciso de ajuda agora
+      </button>
+      <button class="btn-cvv" onclick="window.location.href='tel:188'">
+        Ligar para o CVV (188)
+      </button>
+      <div class="cvv-text">Atendimento 24h gratuito e confidencial</div>
+    </div>
+  </div>
+
+  <div class="menu">
+    <div class="menu-item"><i>🏠</i>Home</div>
+    <div class="menu-item"><i>💳</i>Planos</div>
+    <div class="menu-item"><i>💬</i>Fale Conosco</div>
+    <div class="menu-item active"><i>❤️</i>Emergência</div>
+  </div>
+
+  <script>
+    // Alterna os textos de respiração
+    const breathText = document.getElementById('breathText');
+    const steps = ["Inspire pelo nariz...", "Segure o ar...", "Expire lentamente..."];
+    let i = 0;
+
+    setInterval(() => {
+      i = (i + 1) % steps.length;
+      breathText.textContent = steps[i];
+    }, 4000);
+
+    // Controle de som ambiente
+    const soundBtn = document.getElementById('soundBtn');
+    const calmSound = document.getElementById('calmSound');
+    let isPlaying = false;
+
+    soundBtn.addEventListener('click', () => {
+      if (isPlaying) {
+        calmSound.pause();
+        soundBtn.textContent = "🔈";
+        soundBtn.title = "Ativar som";
+      } else {
+        calmSound.play();
+        soundBtn.textContent = "🔊";  
+        soundBtn.title = "Desativar som";
+      }
+      isPlaying = !isPlaying;
+    });
+  </script>
+
+</body>
+</html>
+```
