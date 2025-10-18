@@ -129,7 +129,7 @@
       display: flex;
       justify-content: space-around;
       align-items: center;
-      background-color: #F5EDE4;
+      background-color: #dec9b1;
       padding: 10px 0;
       border-top: 1px solid #C6A98E;
     }
@@ -143,7 +143,7 @@
     }
 
     .menu-item.active {
-      color: #A98364;
+      color: #b4692c;
       font-weight: bold;
     }
 
@@ -151,3 +151,15 @@
       font-size: 1.4rem;
       margin-bottom: 4px;
     }
+
+.menu-btn {
+    width: 100%;
+    background-color: #dec9b1;; /* marrom neutro */
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s;
+  }

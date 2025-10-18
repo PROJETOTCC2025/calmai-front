@@ -1,12 +1,14 @@
 ```html
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Botão do Pânico</title>
   <link rel="stylesheet" href="panico.css">
 </head>
+
 <body>
 
   <button class="sound-toggle" id="soundBtn" title="Ativar som">🔈</button>
@@ -36,11 +38,33 @@
   </div>
 
   <div class="menu">
-    <div class="menu-item"><i>🏠</i>Home</div>
-    <div class="menu-item"><i>💳</i>Planos</div>
-    <div class="menu-item"><i>💬</i>Fale Conosco</div>
-    <div class="menu-item active"><i>❤️</i>Emergência</div>
+    <div class="menu-item">
+      <a href="..//TelaPaciente/TelaPaciente.html">
+        <button class="menu-btn">🏠 Home</button>
+      </a>
+    </div>
+
+    <div class="menu-item">
+      <a href="..//planosuser/planos.html">
+        <button class="menu-btn">💳 Planos</button>
+      </a>
+    </div>
+
+
+    <div class="menu-item">
+      <a href="..//faleconosco/faleconosco.html">
+        <button class="menu-btn">💬 Fale Conosco</button>
+      </a>
+    </div>
+
+
+    <div class="menu-item active">
+      <a href="..//botaopanico/panico.html">
+        <button class="menu-btn">❤️ Emergência</button>
+      </a>
+    </div>
   </div>
+
 
   <script>
     // Alterna os textos de respiração
@@ -65,7 +89,7 @@
         soundBtn.title = "Ativar som";
       } else {
         calmSound.play();
-        soundBtn.textContent = "🔊";  
+        soundBtn.textContent = "🔊";
         soundBtn.title = "Desativar som";
       }
       isPlaying = !isPlaying;
@@ -73,5 +97,6 @@
   </script>
 
 </body>
+
 </html>
 ```

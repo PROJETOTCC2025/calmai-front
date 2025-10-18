@@ -82,6 +82,18 @@
     .link-voltar:hover {
       text-decoration: underline;
     }
+
+    .profissional label {
+      display: inline;
+    }
+
+    .profissional input {
+      width: 10px;
+    }
+
+    .esconder {
+      display: none;
+    }
   </style>
 </head>
 <body>
@@ -103,14 +115,27 @@
       <label for="senha">Senha</label>
       <input type="password" id="senha" name="senha" required>
 
-       <label for="senha"> Repetir Senha</label>
+      <label for="senha"> Repetir Senha</label>
       <input type="password" id="senha" name="senha" required>
 
+      <div class="profissional">
+        <input type="checkbox" id="isProfissional" onclick="switchCRP()">
+        <label for="isProfissional">Sou profissional</label>
+      </div>
 
+      <div id="divCRP" class="esconder">
+        <label for="nome">CRP</label>
+        <input type="text" id="crp" name="nome">
+      </div>
+
+
+      <a href="..//TelaAcesso/TelaDeAcesso.html">
       <button type="submit">Cadastrar</button>
+      </a>
     </form>
 
-    <a href="index.html" class="link-voltar">⬅ Voltar para Página Inicial</a>
+    <a href="../TelaAcesso/TelaDeAcesso.html" class="link-voltar">⬅ Voltar para Página Inicial</a>
   </div>
+  <script src="login.js"></script>
 </body>
 </html>

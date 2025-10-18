@@ -93,6 +93,14 @@ h1 {
   width: 100%;
 }
 
+.profi {
+ background-color: #A67C52;
+  color: white;
+  display: block ;
+  width: 100%;
+}
+
+
 .secondary {
   background-color: white;
   color: #A67C52;
@@ -108,13 +116,7 @@ h1 {
   justify-content: center;
 }
 
-.Voltar {
-  background-color: #8B5E3C;
-  color: white;
- display: flex;
-  align-items: center;
-  justify-content: center;  
-}
+
 
 
 
