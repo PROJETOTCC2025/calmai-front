@@ -7,65 +7,48 @@
   <link rel="stylesheet" href="TelaPaciente.css">
 </head>
 <body>
-    <div class="imagem-jovem
-    <!-- Imagem centralizada e menor -->
-    <div class="imagem-topo">
-      <img src="jovem.png" alt="Imagem jovem" class="imagem-jovem">
-    </div>
+  <div class="imagem-topo">
+    <img src="jovem.png" alt="Imagem do usuário" class="imagem-jovem">
+  </div>
 
   <div class="container">
     <header>
-        <h1>CALMA AÍ</h1>
+      <h1>CALMA AÍ</h1>
       <h2>Olá, Aline 👋</h2>
       <p class="slogan">Seu espaço de calma e apoio emocional!</p>
     </header>
 
-    <!-- Agenda -->
     <section class="secao">
-  <h2>Agenda Mensal</h2>
-  <div id="calendario" class="calendario"></div>
-  <p id="dataSelecionada" class="data-info">Nenhum dia selecionado</p>
-</section>
+      <h2>Agenda Mensal</h2>
+      <div id="calendario" class="calendario"></div>
+      <p id="dataSelecionada" class="data-info">Nenhum dia selecionado</p>
+    </section>
 
-    <!-- Próximas sessões -->
     <section class="secao">
       <h2>Próximas Sessões</h2>
-      <ul id="proximas-sessoes">
-        <li>20/09 - 14h com Dra. Ana</li>
-        <li>27/09 - 10h com Dr. João</li>
-      </ul>
+      <ul id="proximas-sessoes"></ul>
     </section>
 
-    <!-- Histórico -->
-    <section class="secao">
-      <h2>Histórico</h2>
-      <ul>
-        <li>13/09 - Sessão concluída</li>
-        <li>06/09 - Sessão concluída</li>
-      </ul>
-    </section>
-
-    <!-- Botão de agendamento -->
     <button class="btn agendar" onclick="agendarSessao()">Agendar nova sessão</button>
-
-    <!-- Mapa de humor -->
-    <section class="secao">
-      <h2>Mapa de Humor</h2>
-      <div class="humor">
-        <p>😊 😐 😢 😠</p>
-        <p>Último registro: 14/09 - 😊</p>
-        <button onclick="registrarHumor()">Registrar humor</button>
-      </div>
-    </section>
-
-    <!-- Botão de urgência -->
-     <a href="..//botaopanico/panico.html">
-    <button class="btn urgencia">🚨 Botão do Pânico</button>
-    </a>
+    <a href="../botaopanico/panico.html" class="btn urgencia">🚨 Botão do Pânico</a>
   </div>
 
-  <script src="paciente.js"></script>
-    
+  <!-- Menu inferior -->
+  <nav class="menu-app" aria-label="Menu principal">
+    <a href="TelaPaciente.html" class="menu-item">
+      <p>🏠 Início</p>
+    </a>
+    <a href="chat.html" class="menu-item">
+      <p>💬 Chat</p>
+    </a>
+    <a href="boas-praticas.html" class="menu-item ativo">
+      <p>📘 Boas Práticas</p>
+    </a>
+    <a href="perfil.html" class="menu-item">
+      <p>⚙️ Planos</p>
+    </a>
+  </nav>
+
+  <script src="paciente.js" defer></script>
 </body>
 </html>
-

@@ -13,37 +13,70 @@
       <p class="slogan">Cuide do seu bem-estar com hábitos saudáveis</p>
     </header>
 
-    <section class="menu-praticas">
-      <button onclick="mostrarConteudo('respiracao')">🌬️ Respiração</button>
-      <button onclick="mostrarConteudo('yoga')">🧘 Yoga</button>
-      <button onclick="mostrarConteudo('alimentacao')">🥗 Alimentação</button>
-      <button onclick="mostrarConteudo('sono')">😴 Sono</button>
-      <button onclick="mostrarConteudo('humor')">📊 Mapa de Humor</button>
+    <!-- Accordion -->
+    <section class="accordion-container">
+      <div class="accordion-item">
+        <button class="accordion" aria-expanded="false">🌬️ Respiração</button>
+        <div class="panel">
+          <p>Pratique respiração profunda por 5 minutos ao acordar e antes de dormir. Inspire pelo nariz, segure por 4 segundos e expire lentamente.</p>
+          <iframe width="100%" height="200" src="https://www.youtube.com/watch?v=kiEmbhvv7Fo" title="Técnica de Respiração Guiada" allowfullscreen></iframe>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <button class="accordion" aria-expanded="false">🧘 Yoga</button>
+        <div class="panel">
+          <p>Inclua 10 minutos de yoga no seu dia. Comece com posturas simples como a “Postura da Criança” e “Cachorro Olhando para Baixo”.</p>
+          <iframe width="100%" height="200" src="https://www.youtube.com/watch?v=x-UGt6cXtrU" title="Aula de Yoga para Iniciantes" allowfullscreen></iframe>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <button class="accordion" aria-expanded="false">🥗 Alimentação</button>
+        <div class="panel">
+          <p>Mantenha uma alimentação equilibrada com frutas, legumes, proteínas e muita água. Evite excesso de cafeína e açúcar.</p>
+          <iframe width="100%" height="200" src="https://www.youtube.com/watch?v=w91GkbV80BM" title="Alimentação Saudável e Equilíbrio" allowfullscreen></iframe>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <button class="accordion" aria-expanded="false">😴 Sono</button>
+        <div class="panel">
+          <p>Estabeleça uma rotina de sono. Evite telas antes de dormir e mantenha um ambiente escuro e silencioso.</p>
+          <iframe width="100%" height="200" src="https://www.youtube.com/watch?v=rCQwOSPM_hk" title="Dicas para Dormir Melhor" allowfullscreen></iframe>
+        </div>
+      </div>
     </section>
 
-    <section id="conteudo" class="conteudo">
-      <p>Selecione uma prática para ver as dicas.</p>
+    <!-- Mapa de Humor -->
+    <section class="humor">
+      <h2>📊 Mapa de Humor</h2>
+      <p class="emojis">😊 😐 😢 😠</p>
+      <p id="ultimoRegistro">Último registro: 14/09 - 😊</p>
+      <button class="btn-humor" onclick="registrarHumor()">Registrar humor</button>
     </section>
-<!-- Mapa de Humor -->
-<section class="secao">
-<h2>📊 Mapa de Humor</h2>
- <div class="humor"></div>
- <p>😊 😐 😢 😠</p>
- <p>Último registro: 14/09 - 😊</p>
- <button onclick="registrarHumor()">Registrar humor</button>
- </div>
-
-</section>                                    
-
   </main>
+
+  <!-- Menu inferior -->
   <nav class="menu-app">
-    <a href="#inicio" class="menu-item"><span>🏠</span><p>Início</p></a>
-    <a href="#panico" class="menu-item"><span>🚨</span><p>Pânico</p></a>
-    <a href="#fale-conosco" class="menu-item"><span>📞</span><p>Contato</p></a>
-    <a href="#chat" class="menu-item"><span>💬</span><p>Chat</p></a>
+    <a href="#" class="menu-item">
+      <p>🏠 Início</p>
+      <a href="telaPaciente.html"></a>
+    </a>
+    <a href="#" class="menu-item">
+      <p>🚨 Pânico</p>
+      <a href="telaPanico.html"></a>
+    </a>
+    <a href="#" class="menu-item">
+      <p>📞 Contato</p>
+      <a href="telaContato.html"></a>
+    </a>
+    <a href="#" class="menu-item">
+      <p>💬 Chat</p>
+      <a href="telaChat.html"></a>
+    </a>
   </nav>
 
   <script src="boas-praticas.js"></script>
 </body>
 </html>
-

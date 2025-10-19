@@ -1,14 +1,13 @@
-/* Estilo geral */
+/* Estilo base */
 body {
   font-family: 'Inter', sans-serif;
-  background-color: #F5EDE4; /* tom nude claro */
+  background-color: #F5EDE4;
   margin: 0;
   padding: 0;
   display: flex;
   justify-content: center;
 }
 
-/* Container principal */
 .container {
   width: 100%;
   max-width: 400px;
@@ -16,14 +15,14 @@ body {
   text-align: center;
 }
 
-/* Imagem menor e centralizada */
+/* Imagem centralizada */
 .imagem-topo {
   display: flex;
   justify-content: center;
   margin-bottom: 20px;
 }
 
-.imagem-jovem {
+.imagem-ia {
   width: 120px;
   height: 120px;
   border-radius: 50%;
@@ -59,10 +58,19 @@ h1 {
 
 .input-group input {
   width: 100%;
-  padding: 10px;
+  padding: 12px;
   border: 1px solid #C2B8AE;
-  border-radius: 5px;
+  border-radius: 8px;
   background-color: #FAF6F2;
+  font-size: 14px;
+  transition: 0.3s;
+  box-sizing: border-box;
+}
+
+.input-group input:focus {
+  border-color: #A67C52;
+  outline: none;
+  box-shadow: 0 0 5px rgba(166,124,82,0.3);
 }
 
 /* Link de senha */
@@ -74,6 +82,10 @@ h1 {
   font-size: 14px;
 }
 
+.forgot:hover {
+  text-decoration: underline;
+}
+
 /* Botões */
 .btn {
   width: 100%;
@@ -81,44 +93,60 @@ h1 {
   border: none;
   border-radius: 8px;
   font-weight: bold;
-  margin-bottom: 10px;
+  margin-bottom: 12px;
   cursor: pointer;
-  display: block;
+  transition: 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  text-decoration: none;
+  font-size: 16px;
+  box-sizing: border-box;
 }
 
 .primary {
   background-color: #A67C52;
-  color: white;
-  display: block ;
-  width: 100%;
+  color: #fff;
+}
+
+.primary:hover {
+  background-color: #8B5E3C;
 }
 
 .profi {
- background-color: #A67C52;
-  color: white;
-  display: block ;
-  width: 100%;
+  background-color: #8B5E3C;
+  color: #fff;
 }
 
+.profi:hover {
+  background-color: #A67C52;
+}
 
 .secondary {
-  background-color: white;
+  background-color: #fff;
   color: #A67C52;
   border: 2px solid #A67C52;
-  display: block;
+}
+
+.secondary:hover {
+  background-color: #f5e5d9;
 }
 
 .google {
-  background-color: #8B5E3C;
-  color: white;
-  display: block;
-  align-content: center;
-  justify-content: center;
+  background-color: #DB4437;
+  color: #fff;
 }
 
+.google:hover {
+  background-color: #c33d2f;
+}
 
-
-
+/* Ícone do Google */
+.google-icon {
+  width: 20px;
+  height: 20px;
+}
 
 /* Responsividade */
 @media (max-width: 600px) {
@@ -144,6 +172,3 @@ h1 {
     font-size: 14px;
   }
 }
-
-
-

@@ -3,68 +3,38 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Calma Aí - Fale Conosco</title>
+  <title>Contato - Calma Aí</title>
   <link rel="stylesheet" href="faleconosco.css">
-  
 </head>
 <body>
-
   <header>
-    <h1>CALMA.AÍ</h1>
-    <button>Login</button>
+    <h1>CALMA AÍ</h1>
+    <button onclick="window.history.back()">Login</button>
   </header>
 
   <section class="logo-section">
-    <img src="ia.png" alt="Logo">
-    <h2>Teu espaço seguro<br>de apoio emocional</h2>
+    <img src="ia.png" alt="Logo Calma Aí">
+    <h2>Fale Conosco</h2>
+    <p>Estamos aqui para ouvir você!</p>
   </section>
-
   <section class="form-section">
-    <h3>Fale Conosco</h3>
-    <p>Estamos prontos para te ajudar! Preencha o formulário ou entre em contato pelos canais abaixo.</p>
-
-    <form id="contactForm">
-      <input type="text" id="name" placeholder="Name" required>
-      <input type="text" id="surname" placeholder="Surname" required>
-      <input type="email" id="email" placeholder="Email" required>
-      <textarea id="message" placeholder="Message" required></textarea>
-      <button type="submit">Submit</button>
+    <p>Preencha o formulário ou entre em contato pelos canais abaixo.</p>
+    <form>
+      <input type="text" placeholder="Seu nome" required>
+      <input type="email" placeholder="Seu e-mail" required>
+      <textarea placeholder="Sua mensagem" required></textarea>
+      <button type="submit">Enviar</button>
     </form>
   </section>
 
-  <div class="contacts">
-    <p>📧 calmaAI@gmail.com</p>
-    <p>📷 @calmaAI_</p>
-    <p>📞 47-22658974</p>
-  </div>
+  <section class="contacts">
+    <p>📞 Telefone: (11) 99999-9999</p>
+    <p>✉️ E-mail: contato@calmaai.com</p>
+    <p>🏢 Endereço: Rua da Calma, 123 - Cidade</p>
+  </section>
 
   <footer>
-    ⚠️ pânico
+    &copy; 2025 Calma Aí. Todos os direitos reservados.
   </footer>
-
-  <script>
-    // Captura do formulário
-    document.getElementById("contactForm").addEventListener("submit", function(event) {
-      event.preventDefault();
-
-      const name = document.getElementById("name").value;
-      const surname = document.getElementById("surname").value;
-      const email = document.getElementById("email").value;
-      const message = document.getElementById("message").value;
-
-      // Exemplo simples de validação
-      if (!name || !surname || !email || !message) {
-        alert("Por favor, preencha todos os campos!");
-        return;
-      }
-
-      // Simulação de envio
-      alert(`Obrigado, ${name}! Sua mensagem foi enviada com sucesso.`);
-
-      // Limpar campos
-      document.getElementById("contactForm").reset();
-    });
-  </script>
-
 </body>
 </html>

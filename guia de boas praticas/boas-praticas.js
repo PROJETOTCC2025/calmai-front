@@ -1,27 +1,33 @@
+// Accordion com apenas um aberto por vez
+const accordions = document.querySelectorAll(".accordion");
 
-function mostrarConteudo(tipo) {
-  const conteudo = document.getElementById("conteudo");
-  let texto = "";
+accordions.forEach((btn) => {
+  btn.addEventListener("click", () => {
+    const isActive = btn.getAttribute("aria-expanded") === "true";
 
-  switch (tipo) {
-    case "respiracao":
-      texto = "Pratique respiração profunda por 5 minutos ao acordar e antes de dormir. Inspire pelo nariz, segure por 4 segundos e expire lentamente.";
-      break;
-    case "yoga":
-      texto = "Inclua 10 minutos de yoga no seu dia. Comece com posturas simples como a 'Postura da Criança' e 'Cachorro Olhando para Baixo'.";
-      break;
-    case "alimentacao":
-      texto = "Mantenha uma alimentação equilibrada com frutas, legumes, proteínas e muita água. Evite excesso de cafeína e açúcar.";
-      break;
-    case "sono":
-      texto = "Estabeleça uma rotina de sono. Evite telas antes de dormir e mantenha um ambiente escuro e silencioso.";
-      break;
-    case "humor":
-      texto = "Registre seu humor diariamente. Isso ajuda a identificar padrões e melhorar seu bem-estar emocional.";
-      break;
-    default:
-      texto = "Selecione uma prática para ver as dicas.";
+    // Fecha todos os outros
+    accordions.forEach((otherBtn) => {
+      otherBtn.setAttribute("aria-expanded", "false");
+      otherBtn.nextElementSibling.style.maxHeight = null;
+      otherBtn.nextElementSibling.classList.remove("show");
+    });
+
+    // Se o clicado não estava aberto, abre
+    if (!isActive) {
+      btn.setAttribute("aria-expanded", "true");
+      const panel = btn.nextElementSibling;
+      panel.classList.add("show");
+      panel.style.maxHeight = panel.scrollHeight + "px";
+    }
+  });
+});
+
+// Função para registrar humor
+function registrarHumor() {
+  const ultimoRegistro = document.getElementById("ultimoRegistro");
+  const dataAtual = new Date().toLocaleDateString("pt-BR");
+  const emoji = prompt("Como está seu humor hoje? 😊 😐 😢 😠");
+  if (emoji) {
+    ultimoRegistro.textContent = `Último registro: ${dataAtual} - ${emoji}`;
   }
-
-  conteudo.innerHTML = `<p>${texto}</p>`;
 }

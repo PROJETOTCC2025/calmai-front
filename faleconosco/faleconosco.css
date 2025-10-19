@@ -1,118 +1,165 @@
+/* Estilo base da tela paciente */
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background-color: #F5EDE4;
+  color: #5D4A3C;
+}
 
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background-color: #e9dbd8;
-      color: #333;
-    }
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #fff;
+  border-bottom: 1px solid #C2B8AE;
+}
 
-    header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 10px 20px;
-      background-color: #fff;
-    }
+header h1 {
+  font-size: 1.2rem;
+  color: #8B5E3C;
+}
 
-    header h1 {
-      color: #8b5e3c;
-      font-size: 1.2rem;
-    }
+header button {
+  padding: 6px 12px;
+  border: none;
+  border-radius: 8px;
+  background-color: #A67C52;
+  color: #fff;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s;
+}
 
-    header button {
-      padding: 5px 10px;
-      border: 1px solid #333;
-      border-radius: 5px;
-      background: #fff;
-      cursor: pointer;
-    }
+header button:hover {
+  background-color: #8B5E3C;
+}
 
-    .logo-section {
-      text-align: center;
-      padding: 20px;
-    }
+/* Logo e subtítulo */
+.logo-section {
+  text-align: center;
+  padding: 20px;
+}
 
-    .logo-section img {
-      width: 120px;
-    }
+.logo-section img {
+  width: 120px;
+  height: auto;
+}
 
-    .logo-section h2 {
-      margin: 10px 0;
-      font-size: 1.3rem;
-    }
+.logo-section h2 {
+  margin: 10px 0;
+  font-size: 1.3rem;
+}
 
-    .form-section {
-      text-align: center;
-      padding: 20px;
-    }
+.logo-section p {
+  font-size: 0.95rem;
+}
 
-    .form-section h3 {
-      margin-bottom: 10px;
-      font-size: 1.1rem;
-    }
+/* Formulário */
+.form-section {
+  text-align: center;
+  padding: 10px 20px;
+}
 
-    .form-section p {
-      font-size: 0.9rem;
-      margin-bottom: 20px;
-    }
+.form-section h3 {
+  margin-bottom: 10px;
+  font-size: 1.1rem;
+}
 
-    form {
-      max-width: 400px;
-      margin: 0 auto;
-      background: #fff;
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    }
+.form-section p {
+  font-size: 0.9rem;
+  margin-bottom: 15px;
+}
 
-    form input, form textarea {
-      width: 100%;
-      padding: 10px;
-      margin: 8px 0;
-      border: 1px solid #ccc;
-      border-radius: 8px;
-      font-size: 0.9rem;
-    }
+form {
+  max-width: 400px;
+  margin: 0 auto;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
 
-    form textarea {
-      resize: none;
-      height: 80px;
-    }
+form input, form textarea {
+  width: 100%;
+  padding: 12px;
+  margin: 8px 0;
+  border: 1px solid #C2B8AE;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  box-sizing: border-box;
+  transition: 0.3s;
+}
 
-    form button {
-      width: 100%;
-      padding: 12px;
-      background: #333;
-      color: #fff;
-      border: none;
-      border-radius: 8px;
-      font-size: 1rem;
-      cursor: pointer;
-      transition: 0.3s;
-    }
+form input:focus, form textarea:focus {
+  border-color: #A67C52;
+  box-shadow: 0 0 5px rgba(166,124,82,0.3);
+  outline: none;
+}
 
-    form button:hover {
-      background: #555;
-    }
+form textarea {
+  resize: none;
+  height: 80px;
+}
 
-    .contacts {
-      text-align: center;
-      margin: 20px auto;
-      padding: 10px;
-      max-width: 400px;
-      background: #fff;
-      border-radius: 8px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    }
+form button {
+  width: 100%;
+  padding: 12px;
+  background-color: #A67C52;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s;
+  margin-top: 10px;
+}
 
-    .contacts p {
-      margin: 5px 0;
-      font-size: 0.95rem;
-    }
+form button:hover {
+  background-color: #8B5E3C;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
 
-    footer {
-      text-align: center;
-      font-size: 0.8rem;
-      margin: 10px;
-    }
-  
+/* Contatos */
+.contacts {
+  text-align: center;
+  margin: 20px auto;
+  padding: 15px;
+  max-width: 400px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.contacts p {
+  margin: 5px 0;
+  font-size: 0.95rem;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  font-size: 0.8rem;
+  margin: 15px 0;
+  color: #7D6E63;
+}
+
+/* Responsivo */
+@media (max-width: 500px) {
+  form, .contacts {
+    padding: 15px;
+  }
+
+  header h1 {
+    font-size: 1rem;
+  }
+
+  .logo-section h2 {
+    font-size: 1.1rem;
+  }
+
+  form input, form textarea {
+    font-size: 0.9rem;
+  }
+}

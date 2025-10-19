@@ -10,49 +10,38 @@
 
 <body>
   <div class="container">
-    <!-- Imagem centralizada e menor -->
+
+    <!-- Imagem centralizada -->
     <div class="imagem-topo">
       <img src="ia.png" alt="Imagem IA" class="imagem-ia">
     </div>
 
-    <!-- Conteúdo principal -->
+    <!-- Título e slogan -->
     <h1>Calma Aí</h1>
     <p class="slogan">Sua terapia de calma e apoio emocional!</p>
 
+    <!-- Formulário de login -->
     <div class="input-group">
       <label for="email">E-mail</label>
-      <input type="email" id="email" placeholder="Digite seu email">
+      <input type="email" id="email" placeholder="Digite seu email" required aria-label="Email">
     </div>
 
     <div class="input-group">
       <label for="senha">Senha</label>
-      <input type="password" id="senha" placeholder="Digite sua senha">
+      <input type="password" id="senha" placeholder="Digite sua senha" required aria-label="Senha">
     </div>
-
 
     <a href="#" class="forgot">Esqueceu a senha?</a>
 
-    <a href="../TelaPaciente/TelaPaciente.html">
-      <button class="btn primary">Entrar paciente</button>
-    </a>
+    <!-- Botões de ação -->
+    <a href="../TelaPaciente/TelaPaciente.html" class="btn primary">Entrar paciente</a>
+    <a href="../profissional/profissionalindex.html" class="btn profi">Entrar profissional</a>
+    <a href="../telaLogin/login.html" class="btn secondary">Cadastrar</a>
+    <button class="btn google">
+      <img src="google.png" alt="Google" class="google-icon">
+      Entrar com Google
+    </button>
 
-    <a href="../profissional/profissionalindex.html">
-      <button class="btn profi">Entrar profissinal</button>
-    </a>
-
-
-    <a href="../telaLogin/login.html">
-      <button class="btn secondary">Cadastrar</button>
-    </a>
-
-    <button class="btn google">Entrar com o Google</button>
-
-
-    
   </div>
-
-
-
 </body>
-
 </html>
