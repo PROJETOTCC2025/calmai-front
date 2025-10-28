@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Histórico do Paciente</title>
+  <style>
+    body {
+      font-family: "Segoe UI", Arial, sans-serif;
+      background-color: #f7ebdf;
+      color: #5e4b3c;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    .container {
+      background-color: #fff6ee;
+      border: 1px solid #d3b8a3;
+      border-radius: 10px;
+      padding: 25px;
+      max-width: 400px;
+      width: 90%;
+      text-align: center;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    }
+
+    h2 {
+      font-size: 20px;
+      margin-bottom: 15px;
+      color: #5e4b3c;
+    }
+
+    .historico {
+      text-align: left;
+      font-size: 15px;
+      margin-top: 15px;
+      line-height: 1.5;
+    }
+
+    .historico-item {
+      background-color: #f5dac0;
+      margin-bottom: 10px;
+      padding: 8px;
+      border-radius: 6px;
+      border: 1px solid #e3d0c0;
+    }
+
+    .voltar {
+      margin-top: 25px;
+      display: inline-block;
+      background-color: #b48b67;
+      color: #fff;
+      text-decoration: none;
+      padding: 10px 18px;
+      border-radius: 6px;
+      font-weight: bold;
+      transition: 0.2s;
+    }
+
+    .voltar:hover {
+      background-color: #9c7553;
+    }
+
+    @media (max-width: 480px) {
+      h2 { font-size: 18px; }
+      .historico { font-size: 14px; }
+      .container { padding: 20px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Histórico do Paciente</h2>
+    <p id="nomePaciente"></p>
+    <div class="historico" id="historicoPaciente"></div>
+    <a href="index.html" class="voltar">Voltar</a>
+  </div>
+
+  <script>
+    // "Banco de dados" simulado de históricos de pacientes
+    const historicos = {
+      "Cassia Starling": [
+        "06/11/2025 - Sessão concluída: Ansiedade leve",
+        "30/10/2025 - Sessão concluída: Exercícios de respiração",
+        "23/10/2025 - Sessão concluída: Introdução à terapia cognitiva"
+      ],
+      "Renata Brunner": [
+        "07/11/2025 - Sessão concluída: Autoconfiança",
+        "31/10/2025 - Sessão concluída: Técnicas de comunicação",
+        "24/10/2025 - Sessão concluída: Mindfulness"
+      ],
+      "Lucas Pereira": [
+        "05/11/2025 - Sessão concluída: Estresse no trabalho",
+        "28/10/2025 - Sessão concluída: Produtividade e foco",
+        "21/10/2025 - Sessão concluída: Planejamento de metas"
+      ]
+    };
+
+    // Captura o nome do paciente da URL
+    const params = new URLSearchParams(window.location.search);
+    const nome = params.get("paciente");
+    document.getElementById("nomePaciente").textContent = `Paciente: ${nome}`;
+
+    const historicoDiv = document.getElementById("historicoPaciente");
+    const registros = historicos[nome];
+
+    if (registros && registros.length > 0) {
+      registros.forEach(item => {
+        const div = document.createElement("div");
+        div.classList.add("historico-item");
+        div.textContent = item;
+        historicoDiv.appendChild(div);
+      });
+    } else {
+      historicoDiv.innerHTML = `<em>Nenhum histórico disponível para este paciente.</em>`;
+    }
+  </script>
+</body>
+</html>
+

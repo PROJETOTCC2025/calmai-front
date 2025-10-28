@@ -1,62 +1,127 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Detalhes da Consulta</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Detalhes do Paciente</title>
+  <style>
+    body {
+      font-family: "Segoe UI", Arial, sans-serif;
+      background-color: #f7ebdf;
+      color: #5e4b3c;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    .container {
+      background-color: #fff6ee;
+      border: 1px solid #d3b8a3;
+      border-radius: 10px;
+      padding: 25px;
+      max-width: 400px;
+      width: 90%;
+      text-align: center;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    }
+
+    h2 {
+      font-size: 20px;
+      margin-bottom: 15px;
+      color: #5e4b3c;
+    }
+
+    p {
+      font-size: 16px;
+      margin-bottom: 10px;
+    }
+
+    .info {
+      text-align: left;
+      margin-top: 15px;
+      font-size: 15px;
+      line-height: 1.5;
+    }
+
+    .voltar {
+      margin-top: 25px;
+      display: inline-block;
+      background-color: #b48b67;
+      color: #fff;
+      text-decoration: none;
+      padding: 10px 18px;
+      border-radius: 6px;
+      font-weight: bold;
+      transition: 0.2s;
+    }
+
+    .voltar:hover {
+      background-color: #9c7553;
+    }
+
+    @media (max-width: 480px) {
+      h2 { font-size: 18px; }
+      p, .info { font-size: 14px; }
+      .container { padding: 20px; }
+    }
+  </style>
 </head>
 <body>
-    <div class="container">
-        <header>
-            <div class="profissional">
-                <img src="foto-profissional.jpg" alt="Foto do Profissional" class="foto">
-                <h1>Dr. João Silva</h1>
-            </div>
-        </header>
+  <div class="container">
+    <h2>Detalhes do Paciente</h2>
+    <p id="nomePaciente"></p>
 
-        <section class="detalhes-consulta">
-            <h2>Detalhes da Consulta</h2>
-            <div id="consultaDetalhes">
-                <!-- Detalhes dos pacientes serão carregados aqui -->
-            </div>
-        </section>
-    </div>
+    <div class="info" id="infoPaciente"></div>
 
-    <script>
-        // Captura o parâmetro "day" da URL
-        const urlParams = new URLSearchParams(window.location.search);
-        const day = urlParams.get('day');
+    <a href="index.html" class="voltar">Voltar</a>
+  </div>
 
-        // Dados fictícios de pacientes por dia
-        const consultas = {
-            3: [{ nome: "João Souza", horario: "14:00" }, { nome: "Ana Costa", horario: "15:30" }],
-            4: [{ nome: "Carlos Silva", horario: "09:00" }, { nome: "Maria Oliveira", horario: "11:00" }],
-            5: [{ nome: "Pedro Lima", horario: "10:00" }, { nome: "Julia Pereira", horario: "12:30" }],
-            12: [{ nome: "Ricardo Santos", horario: "13:00" }, { nome: "Larissa Gomes", horario: "14:30" }],
-            14: [{ nome: "Lucas Pereira", horario: "16:00" }, { nome: "Patricia Costa", horario: "17:30" }],
-            18: [{ nome: "Fernanda Souza", horario: "08:30" }, { nome: "Marcio Almeida", horario: "10:00" }],
-            19: [{ nome: "Eduardo Rocha", horario: "09:30" }, { nome: "Roberta Silva", horario: "11:30" }],
-            20: [{ nome: "Mariana Lima", horario: "13:00" }, { nome: "Gustavo Fernandes", horario: "14:00" }],
-            21: [{ nome: "Eliane Costa", horario: "15:00" }, { nome: "Felipe Almeida", horario: "16:30" }],
-            25: [{ nome: "Tatiane Souza", horario: "09:00" }, { nome: "José Santos", horario: "11:00" }],
-            26: [{ nome: "Raquel Oliveira", horario: "10:00" }, { nome: "Lucas Gomes", horario: "12:30" }]
-        };
+  <script>
+    // Simulação de um pequeno "banco de dados" de pacientes
+    const pacientes = {
+      "Cassia Starling": {
+        idade: 29,
+        ultimaSessao: "15/10/2025",
+        proximaSessao: "22/10/2025 - 14h",
+        objetivo: "Controle da ansiedade e equilíbrio emocional"
+      },
+      "Renata Brunner": {
+        idade: 35,
+        ultimaSessao: "10/10/2025",
+        proximaSessao: "17/10/2025 - 16h",
+        objetivo: "Melhorar autoconfiança e autoestima"
+      },
+      "Lucas Pereira": {
+        idade: 41,
+        ultimaSessao: "12/10/2025",
+        proximaSessao: "19/10/2025 - 15h",
+        objetivo: "Gerenciamento de estresse e produtividade"
+      }
+    };
 
-        // Exibir os detalhes do paciente para o dia clicado
-        if (day && consultas[day]) {
-            let detalhesHTML = `<p><strong>Consultas para o dia ${day}:</strong></p>`;
-            consultas[day].forEach(consulta => {
-                detalhesHTML += `
-                    <p><strong>Paciente:</strong> ${consulta.nome}</p>
-                    <p><strong>Horário:</strong> ${consulta.horario}</p>
-                `;
-            });
-            document.getElementById('consultaDetalhes').innerHTML = detalhesHTML;
-        } else {
-            document.getElementById('consultaDetalhes').innerHTML = "<p>Sem consultas para este dia.</p>";
-        }
-    </script>
+    // Captura o nome enviado pela URL
+    const params = new URLSearchParams(window.location.search);
+    const nome = params.get("paciente");
+    document.getElementById("nomePaciente").textContent = `Paciente: ${nome}`;
+
+    // Exibe os dados correspondentes
+    const dados = pacientes[nome];
+    const infoDiv = document.getElementById("infoPaciente");
+
+    if (dados) {
+      infoDiv.innerHTML = `
+        <strong>Idade:</strong> ${dados.idade} anos<br>
+        <strong>Última Sessão:</strong> ${dados.ultimaSessao}<br>
+        <strong>Próxima Sessão:</strong> ${dados.proximaSessao}<br>
+        <strong>Objetivo Terapêutico:</strong> ${dados.objetivo}
+      `;
+    } else {
+      infoDiv.innerHTML = `<em>Dados não encontrados para este paciente.</em>`;
+    }
+  </script>
 </body>
 </html>
 
