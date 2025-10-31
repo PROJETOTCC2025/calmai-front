@@ -10,6 +10,7 @@
 
 <body>
 
+ 
   <button class="sound-toggle" id="soundBtn" title="Ativar som">🔈</button>
 
   <audio id="calmSound" loop>
@@ -36,33 +37,22 @@
     </div>
   </div>
 
-  <div class="menu">
-    <div class="menu-item">
-      <a href="..//TelaPaciente/TelaPaciente.html">
-        <button class="menu-btn">🏠 Home</button>
-      </a>
-    </div>
 
-    <div class="menu-item">
-      <a href="..//planosuser/planos.html">
-        <button class="menu-btn">💳 Planos</button>
-      </a>
-    </div>
-
-
-    <div class="menu-item">
-      <a href="..//faleconosco/faleconosco.html">
-        <button class="menu-btn">💬 Fale Conosco</button>
-      </a>
-    </div>
-
-
-    <div class="menu-item active">
-      <a href="..//botaopanico/panico.html">
-        <button class="menu-btn">❤️ Emergência</button>
-      </a>
-    </div>
-  </div>
+   <!-- Menu inferior -->
+  <nav class="menu-app" aria-label="Menu principal">
+    <a href="..//TelaPaciente/TelaPaciente.html" class="menu-item">
+      <p>Início</p>
+    </a>
+    <a href="..//TelaChat/TelaChat.html" class="menu-item">
+      <p>Chat</p>
+    </a>
+    <a href="..//guia de boas praticas/boas-praticas.html" class="menu-item ativo">
+      <p>Boas Práticas</p>
+    </a>
+    <a href="..//planosuser/planos.html" class="menu-item">
+      <p> Planos</p>
+    </a>
+  </nav>
 
 
   <script>
