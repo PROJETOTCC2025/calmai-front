@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Detalhes do Paciente</title>
   <style>
     body {
@@ -16,7 +16,6 @@
       align-items: center;
       min-height: 100vh;
     }
-
     .container {
       background-color: #fff6ee;
       border: 1px solid #d3b8a3;
@@ -27,25 +26,9 @@
       text-align: center;
       box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
     }
-
-    h2 {
-      font-size: 20px;
-      margin-bottom: 15px;
-      color: #5e4b3c;
-    }
-
-    p {
-      font-size: 16px;
-      margin-bottom: 10px;
-    }
-
-    .info {
-      text-align: left;
-      margin-top: 15px;
-      font-size: 15px;
-      line-height: 1.5;
-    }
-
+    h2 { font-size: 20px; margin-bottom: 15px; color: #5e4b3c; }
+    p { font-size: 16px; margin-bottom: 10px; }
+    .info { text-align: left; margin-top: 15px; font-size: 15px; line-height: 1.5; }
     .voltar {
       margin-top: 25px;
       display: inline-block;
@@ -56,12 +39,9 @@
       border-radius: 6px;
       font-weight: bold;
       transition: 0.2s;
+      cursor: pointer;
     }
-
-    .voltar:hover {
-      background-color: #9c7553;
-    }
-
+    .voltar:hover { background-color: #9c7553; }
     @media (max-width: 480px) {
       h2 { font-size: 18px; }
       p, .info { font-size: 14px; }
@@ -73,14 +53,14 @@
   <div class="container">
     <h2>Detalhes do Paciente</h2>
     <p id="nomePaciente"></p>
-
     <div class="info" id="infoPaciente"></div>
 
-    <a href="index.html" class="voltar">Voltar</a>
+    <!-- Botão voltar -->
+    <button id="btnVoltar" class="voltar">⬅ Voltar</button>
   </div>
 
   <script>
-    // Simulação de um pequeno "banco de dados" de pacientes
+    // --- Simulação de "banco de dados" ---
     const pacientes = {
       "Cassia Starling": {
         idade: 29,
@@ -102,27 +82,47 @@
       }
     };
 
-    // Captura o nome enviado pela URL
-    const params = new URLSearchParams(window.location.search);
-    const nome = params.get("paciente");
-    document.getElementById("nomePaciente").textContent = `Paciente: ${nome}`;
+    // Executa quando DOM estiver pronto
+    document.addEventListener("DOMContentLoaded", () => {
+      const nomePacienteEl = document.getElementById("nomePaciente");
+      const infoDiv = document.getElementById("infoPaciente");
+      const btn = document.getElementById("btnVoltar");
 
-    // Exibe os dados correspondentes
-    const dados = pacientes[nome];
-    const infoDiv = document.getElementById("infoPaciente");
+      // Configura botão voltar
+      btn.addEventListener("click", () => {
+        // Se há histórico, volta; senão, vai para index.html
+        if (window.history.length > 1) {
+          window.history.back();
+        } else {
+          window.location.href = "profissionalindex.html";
+        }
+      });
 
-    if (dados) {
-      infoDiv.innerHTML = `
-        <strong>Idade:</strong> ${dados.idade} anos<br>
-        <strong>Última Sessão:</strong> ${dados.ultimaSessao}<br>
-        <strong>Próxima Sessão:</strong> ${dados.proximaSessao}<br>
-        <strong>Objetivo Terapêutico:</strong> ${dados.objetivo}
-      `;
-    } else {
-      infoDiv.innerHTML = `<em>Dados não encontrados para este paciente.</em>`;
-    }
+      // Lê parâmetro da URL
+      const params = new URLSearchParams(window.location.search);
+      const nome = params.get("paciente");
+
+      if (!nome) {
+        nomePacienteEl.textContent = "Paciente: (não informado)";
+        infoDiv.innerHTML = `<em>Parâmetro "paciente" ausente na URL.</em>`;
+        return;
+      }
+
+      // Mostra nome e dados se existir nos "pacientes"
+      nomePacienteEl.textContent = `Paciente: ${nome}`;
+      const dados = pacientes[nome];
+
+      if (dados) {
+        infoDiv.innerHTML = `
+          <strong>Idade:</strong> ${dados.idade} anos<br>
+          <strong>Última Sessão:</strong> ${dados.ultimaSessao}<br>
+          <strong>Próxima Sessão:</strong> ${dados.proximaSessao}<br>
+          <strong>Objetivo Terapêutico:</strong> ${dados.objetivo}
+        `;
+      } else {
+        infoDiv.innerHTML = `<em>Dados não encontrados para este paciente.</em>`;
+      }
+    });
   </script>
 </body>
 </html>
-
-
