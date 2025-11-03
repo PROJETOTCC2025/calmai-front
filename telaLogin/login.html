@@ -115,8 +115,8 @@
       <label for="senha">Senha</label>
       <input type="password" id="senha" name="senha" required>
 
-      <label for="senha"> Repetir Senha</label>
-      <input type="password" id="senha" name="senha" required>
+      <label for="confirmeSenha"> Repetir Senha</label>
+      <input type="password" id="confirmeSenha" name="confirmeSenha" required>
 
       <div class="profissional">
         <input type="checkbox" id="isProfissional" onclick="switchCRP()">
@@ -124,14 +124,12 @@
       </div>
 
       <div id="divCRP" class="esconder">
-        <label for="nome">CRP</label>
+        <label for="crp">CRP</label>
         <input type="text" id="crp" name="nome">
       </div>
 
 
-      <a href="..//TelaAcesso/TelaDeAcesso.html">
-      <button type="submit">Cadastrar</button>
-      </a>
+      <button onclick="cadastrar()">Cadastrar</button>
     </form>
 
     <a href="../TelaAcesso/TelaDeAcesso.html" class="link-voltar">⬅ Voltar para Página Inicial</a>
