@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Meus Pacientes - Calma Aí</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* Estilo do conteúdo de histórico dentro do modal */
+    .historico-lista {
+      background-color: #fff6ee;
+      border-radius: 8px;
+      padding: 10px;
+      max-height: 300px;
+      overflow-y: auto;
+      margin-top: 10px;
+    }
+
+    .historico-item {
+      background-color: #f5dac0;
+      margin-bottom: 10px;
+      padding: 8px;
+      border-radius: 6px;
+      border: 1px solid #e3d0c0;
+      text-align: left;
+      font-size: 14px;
+    }
+
+    .historico-item:last-child {
+      margin-bottom: 0;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Meus Pacientes</h1>
+  </header>
+
+  <main>
+    <div class="section">
+      <table class="clientes-tabela pacientes">
+        <tr><th>Nome</th><th>Ações</th></tr>
+        <tr>
+          <td>Cassia Starling</td>
+          <td class="acoes">
+            <button onclick="abrirModalDetalhes('Cassia Starling')">Detalhes</button>
+            <button onclick="iniciarConsulta('Cassia Starling')">Iniciar Consulta</button>
+            <button onclick="abrirModalMensagem('Cassia Starling')">Mensagem</button>
+            <button onclick="abrirModalHistorico('Cassia Starling')">Histórico</button>
+          </td>
+        </tr>
+        <tr>
+          <td>Renata Brunner</td>
+          <td class="acoes">
+            <button onclick="abrirModalDetalhes('Renata Brunner')">Detalhes</button>
+            <button onclick="iniciarConsulta('Renata Brunner')">Iniciar Consulta</button>
+            <button onclick="abrirModalMensagem('Renata Brunner')">Mensagem</button>
+            <button onclick="abrirModalHistorico('Renata Brunner')">Histórico</button>
+          </td>
+        </tr>
+        <tr>
+          <td>Lucas Pereira</td>
+          <td class="acoes">
+            <button onclick="abrirModalDetalhes('Lucas Pereira')">Detalhes</button>
+            <button onclick="iniciarConsulta('Lucas Pereira')">Iniciar Consulta</button>
+            <button onclick="abrirModalMensagem('Lucas Pereira')">Mensagem</button>
+            <button onclick="abrirModalHistorico('Lucas Pereira')">Histórico</button>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </main>
+
+  <!-- Modal único (reutilizável para mensagens e históricos) -->
+  <div id="modal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="fecharModal()">&times;</span>
+      <h3 id="modal-titulo"></h3>
+      <div id="modal-corpo"></div>
+    </div>
+  </div>
+
+  <nav class="menu-app">
+    <a href="index.html" class="menu-item">🏠 Início</a>
+    <a href="novos-clientes.html" class="menu-item">🧍 Novos Clientes</a>
+    <a href="meus-pacientes.html" class="menu-item ativo">👥 Meus Pacientes</a>
+  </nav>
+
+  <script>
+  // --- Dados simulados ---
+  const historicos = {
+    "Cassia Starling": [
+      "06/11/2025 - Sessão concluída: Ansiedade leve",
+      "30/10/2025 - Sessão concluída: Exercícios de respiração",
+      "23/10/2025 - Sessão concluída: Introdução à terapia cognitiva"
+    ],
+    "Renata Brunner": [
+      "07/11/2025 - Sessão concluída: Autoconfiança",
+      "31/10/2025 - Sessão concluída: Técnicas de comunicação",
+      "24/10/2025 - Sessão concluída: Mindfulness"
+    ],
+    "Lucas Pereira": [
+      "05/11/2025 - Sessão concluída: Estresse no trabalho",
+      "28/10/2025 - Sessão concluída: Produtividade e foco",
+      "21/10/2025 - Sessão concluída: Planejamento de metas"
+    ]
+  };
+
+  // --- Dados detalhados de pacientes ---
+  const pacientes = {
+    "Cassia Starling": {
+      idade: 29,
+      ultimaSessao: "15/10/2025",
+      proximaSessao: "22/10/2025 - 14h",
+      objetivo: "Controle da ansiedade e equilíbrio emocional"
+    },
+    "Renata Brunner": {
+      idade: 35,
+      ultimaSessao: "10/10/2025",
+      proximaSessao: "17/10/2025 - 16h",
+      objetivo: "Melhorar autoconfiança e autoestima"
+    },
+    "Lucas Pereira": {
+      idade: 41,
+      ultimaSessao: "12/10/2025",
+      proximaSessao: "19/10/2025 - 15h",
+      objetivo: "Gerenciamento de estresse e produtividade"
+    }
+  };
+
+  // --- Função de abrir modal genérico ---
+  function abrirModal(titulo, conteudoHTML) {
+    const modal = document.getElementById('modal');
+    document.getElementById('modal-titulo').textContent = titulo;
+    document.getElementById('modal-corpo').innerHTML = conteudoHTML;
+    modal.style.display = 'flex';
+  }
+
+  // --- Detalhes do paciente ---
+  function abrirModalDetalhes(nome) {
+    const dados = pacientes[nome];
+    if (!dados) {
+      abrirModal("Detalhes do Paciente", `<em>Dados não encontrados para ${nome}.</em>`);
+      return;
+    }
+
+    const conteudo = `
+      <p><strong>Paciente:</strong> ${nome}</p>
+      <p><strong>Idade:</strong> ${dados.idade} anos</p>
+      <p><strong>Última Sessão:</strong> ${dados.ultimaSessao}</p>
+      <p><strong>Próxima Sessão:</strong> ${dados.proximaSessao}</p>
+      <p><strong>Objetivo Terapêutico:</strong><br>${dados.objetivo}</p>
+    `;
+
+    abrirModal("Detalhes do Paciente", conteudo);
+  }
+
+  // --- Modal de mensagem ---
+  function abrirModalMensagem(nome) {
+    const conteudo = `
+      <input type="text" id="msgInput" placeholder="Digite sua mensagem..." />
+      <button onclick="enviarMensagem('${nome}')">Enviar</button>
+    `;
+    abrirModal(`Enviar mensagem para ${nome}`, conteudo);
+  }
+
+  function enviarMensagem(nome) {
+    const input = document.getElementById('msgInput');
+    if (!input.value.trim()) return;
+    alert(`Mensagem enviada para ${nome}: "${input.value}"`);
+    fecharModal();
+  }
+
+  // --- Modal de histórico ---
+  function abrirModalHistorico(nome) {
+    const registros = historicos[nome];
+    if (registros && registros.length > 0) {
+      const lista = registros.map(item => `<div class="historico-item">${item}</div>`).join('');
+      abrirModal(`Histórico de ${nome}`, `<div class="historico-lista">${lista}</div>`);
+    } else {
+      abrirModal(`Histórico de ${nome}`, `<em>Nenhum histórico disponível.</em>`);
+    }
+  }
+
+  // --- Iniciar consulta ---
+  function iniciarConsulta(nome) {
+    const meetLink = "https://meet.google.com/new";
+    if (confirm(`Iniciar consulta com ${nome}?`)) {
+      window.open(meetLink, '_blank');
+    }
+  }
+
+  // --- Fechar modal ---
+  function fecharModal() {
+    document.getElementById('modal').style.display = 'none';
+  }
+
+  // Fecha o modal ao clicar fora
+  window.onclick = e => {
+    const modal = document.getElementById('modal');
+    if (e.target === modal) fecharModal();
+  };
+</script>
+
+ 
+</body>
+</html>

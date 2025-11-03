@@ -93,11 +93,50 @@ h2 {
 }
 
 .clientes-tabela th, .clientes-tabela td {
-  padding: 10px;
+  padding: 16px 12px; /* mais espaço */
   border: 1px solid #d3b8a3;
   text-align: center;
-  font-size: 14px;
+  font-size: 16px; /* fonte maior */
 }
+
+.clientes-tabela {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #fff6ee;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); /* sombra leve */
+}
+
+/* aumenta os botões nas tabelas */
+.clientes-tabela button {
+  padding: 10px 12px;
+  font-size: 15px;
+}
+
+/* melhora o espaçamento entre as ações */
+.clientes-tabela td.acoes {
+  gap: 10px;
+}
+
+/* se quiser deixar a tabela um pouco mais larga no desktop */
+@media (min-width: 800px) {
+  .section {
+    max-width: 800px; /* antes era 600px */
+  }
+
+  .clientes-tabela th, .clientes-tabela td {
+    font-size: 17px;
+    padding: 18px 14px;
+  }
+
+  .clientes-tabela button {
+    font-size: 16px;
+    padding: 12px 14px;
+  }
+}
+
+
 
 .clientes-tabela td.acoes {
   display: flex;
@@ -151,6 +190,7 @@ button:hover {
   border-radius: 10px;
   width: 100%;
   max-width: 350px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
 }
 
 .close {
@@ -158,6 +198,13 @@ button:hover {
   font-size: 22px;
   cursor: pointer;
   color: #b57b55;
+}
+
+.info {
+  text-align: left;
+  font-size: 15px;
+  line-height: 1.5;
+  margin-top: 15px;
 }
 
 input[type="text"] {

@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Calma Aí</title>
+  <title>Calma Aí - Início</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -30,192 +30,18 @@
       <div class="session">07/11 - 14h com Cassia Starling</div>
       <div class="session">07/11 - 16h com Renata Brunner</div>
     </div>
-
-    <!-- NOVOS CLIENTES -->
-    <div class="section">
-      <div class="section-title">Novos Clientes</div>
-      <table class="clientes-tabela">
-        <tr>
-          <th>Nome</th>
-          <th>Ações</th>
-        </tr>
-        <tr>
-          <td>Joana Silva</td>
-          <td>
-            <button class="btn-aceitar">Aceitar</button>
-            <button class="btn-recusar">Recusar</button>
-          </td>
-        </tr>
-        <tr>
-          <td>Lucas Andrade</td>
-          <td>
-            <button class="btn-aceitar">Aceitar</button>
-            <button class="btn-recusar">Recusar</button>
-          </td>
-        </tr>
-        <tr>
-          <td>Mariana Costa</td>
-          <td>
-            <button class="btn-aceitar">Aceitar</button>
-            <button class="btn-recusar">Recusar</button>
-          </td>
-        </tr>
-        <tr>
-          <td>Ricardo Souza</td>
-          <td>
-            <button class="btn-aceitar">Aceitar</button>
-            <button class="btn-recusar">Recusar</button>
-          </td>
-        </tr>
-      </table>
-    </div>
-
-    <!-- MEUS PACIENTES -->
-    <div class="section">
-      <div class="section-title">Meus Pacientes</div>
-      <table class="clientes-tabela pacientes">
-        <tr>
-          <th>Nome</th>
-          <th>Ações</th>
-        </tr>
-        <tr>
-          <td>Cassia Starling</td>
-          <td class="acoes">
-            <button onclick="abrirPagina('detalhesindex.html', 'Cassia Starling')">Detalhes</button>
-            <button onclick="iniciarConsulta('Cassia Starling')">Iniciar Consulta</button>
-            <button onclick="abrirModal('Cassia Starling')">Mensagem</button>
-            <button onclick="abrirPagina('historicoindex.html', 'Cassia Starling')">Histórico</button>
-          </td>
-        </tr>
-        <tr>
-          <td>Renata Brunner</td>
-          <td class="acoes">
-            <button onclick="abrirPagina('detalhesindex.html', 'Renata Brunner')">Detalhes</button>
-            <button onclick="iniciarConsulta('Renata Brunner')">Iniciar Consulta</button>
-            <button onclick="abrirModal('Renata Brunner')">Mensagem</button>
-            <button onclick="abrirPagina('historicoindex.html', 'Renata Brunner')">Histórico</button>
-          </td>
-        </tr>
-        <tr>
-          <td>Lucas Pereira</td>
-          <td class="acoes">
-            <button onclick="abrirPagina('detalhesindex.html', 'Lucas Pereira')">Detalhes</button>
-            <button onclick="iniciarConsulta('Lucas Pereira')">Iniciar Consulta</button>
-            <button onclick="abrirModal('Lucas Pereira')">Mensagem</button>
-            <button onclick="abrirPagina('historicoindex.html', 'Lucas Pereira')">Histórico</button>
-          </td>
-        </tr>
-      </table>
-    </div>
   </main>
 
-
-  <!-- MODAL DE MENSAGEM -->
-  <div id="modal" class="modal">
-    <div class="modal-content">
-      <span class="close" onclick="fecharModal()">&times;</span>
-      <h3 id="modal-titulo"></h3>
-      <div id="modal-corpo"></div>
-    </div>
-
-
-  </div> <!-- Menu inferior -->
-  <nav class="menu-app" aria-label="Menu principal">
-    <a href="..//TelaPaciente/TelaPaciente.html" class="menu-item">
-      <p>🏠 Início</p>
-    </a>
-    <a href="..//TelaChat/TelaChat.html" class="menu-item">
-      <p>💬 </p>
-    </a>
-    <a href="..//guia de boas praticas/boas-praticas.html" class="menu-item ativo">
-      <p></p>
-    </a>
-    <a href="..//planosuser/planos.html" class="menu-item">
-      <p></p>
-    </a>
+  <!-- MENU INFERIOR -->
+  <nav class="menu-app">
+    <a href="profissionalindex.html" class="menu-item ativo">🏠 Início</a>
+    <a href="novos-clientes.html" class="menu-item">🧍 Novos Clientes</a>
+    <a href="meus-pacientes.html" class="menu-item">👥 Meus Pacientes</a>
   </nav>
 
-
-
-
-
-
-
-
-  <script>
-    // --- CALENDÁRIO ---
-    const calendar = document.getElementById('calendar');
-    const selectedDay = document.getElementById('selected-day');
-    const sessoesPorDia = { 7: "14h com Cassia, 16h com Renata" };
-    const totalDiasMes = 30;
-    const primeiroDiaSemana = new Date(2025, 10, 1).getDay();
-
-    for (let i = 0; i < primeiroDiaSemana; i++) {
-      calendar.appendChild(document.createElement('div'));
-    }
-
-    for (let i = 1; i <= totalDiasMes; i++) {
-      const day = document.createElement('div');
-      day.classList.add('day');
-      day.textContent = i;
-      day.addEventListener('click', () => {
-        const texto = sessoesPorDia[i]
-          ? `Dia ${i}/11 — Sessões: ${sessoesPorDia[i]}`
-          : `Dia ${i}/11 — Nenhuma sessão agendada.`;
-        selectedDay.textContent = texto;
-      });
-      calendar.appendChild(day);
-    }
-
-    // --- AÇÕES DE CLIENTES ---
-    document.querySelectorAll('.btn-aceitar').forEach(btn => {
-      btn.onclick = () => alert(`Cliente ${btn.closest('tr').children[0].textContent} aceito com sucesso!`);
-    });
-    document.querySelectorAll('.btn-recusar').forEach(btn => {
-      btn.onclick = () => alert(`Cliente ${btn.closest('tr').children[0].textContent} recusado.`);
-    });
-
-    // --- FUNÇÕES PACIENTES ---
-    function abrirPagina(pagina, nome) {
-      const url = `${pagina}?paciente=${encodeURIComponent(nome)}`;
-      window.open(url, '_blank');
-    }
-
-    function iniciarConsulta(nome) {
-      const meetLink = "https://meet.google.com/new"; // 🔗 link padrão ou personalizado
-      if (confirm(`Iniciar consulta com ${nome}?`)) {
-        window.open(meetLink, '_blank');
-      }
-    }
-
-    function abrirModal(nome) {
-      const modal = document.getElementById('modal');
-      const titulo = document.getElementById('modal-titulo');
-      const corpo = document.getElementById('modal-corpo');
-      titulo.textContent = `Enviar mensagem para ${nome}`;
-      corpo.innerHTML = `
-        <input type="text" id="msgInput" placeholder="Digite sua mensagem..." />
-        <button onclick="enviarMensagem('${nome}')">Enviar</button>`;
-      modal.style.display = 'flex';
-    }
-
-    function enviarMensagem(nome) {
-      const input = document.getElementById('msgInput');
-      if (!input.value.trim()) return;
-      alert(`Mensagem enviada para ${nome}: "${input.value}"`);
-      fecharModal();
-    }
-
-    function fecharModal() {
-      document.getElementById('modal').style.display = 'none';
-    }
-
-    window.onclick = e => {
-      const modal = document.getElementById('modal');
-      if (e.target === modal) fecharModal();
-    };
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>
+
 
 
