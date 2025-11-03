@@ -5,10 +5,12 @@ const sessoes = [
   { data: '2025-10-27', horario: '10h', profissional: 'Dr. João' }
 ];
 
+// Redirecionamento para agendamento
 function agendarSessao() {
   alert("Redirecionando para agendamento de sessão...");
 }
 
+// Gerar Calendário
 function gerarCalendario() {
   const calendario = document.getElementById("calendario");
   const dataSelecionada = document.getElementById("dataSelecionada");
@@ -25,7 +27,6 @@ function gerarCalendario() {
 
     const dataFormatada = `${ano}-${String(mes + 1).padStart(2,'0')}-${String(dia).padStart(2,'0')}`;
 
-    // Verifica se tem sessão
     const sessaoDia = sessoes.find(s => s.data === dataFormatada);
     if (sessaoDia) {
       diaElemento.classList.add('sessao');
@@ -39,7 +40,7 @@ function gerarCalendario() {
     diaElemento.addEventListener("click", () => {
       document.querySelectorAll(".calendario div").forEach(el => el.classList.remove("selecionado"));
       diaElemento.classList.add("selecionado");
-      dataSelecionada.textContent = sessaoDia
+      dataSelecionada.textContent = sessaoDia 
         ? `Você selecionou: ${dia}/${mes + 1}/${ano} - Sessão às ${sessaoDia.horario} com ${sessaoDia.profissional}`
         : `Você selecionou: ${dia}/${mes + 1}/${ano}`;
     });
@@ -47,7 +48,7 @@ function gerarCalendario() {
     calendario.appendChild(diaElemento);
   }
 
-  // Preenche a lista de próximas sessões
+  // Próximas sessões
   const proximasSessoesUl = document.getElementById('proximas-sessoes');
   proximasSessoesUl.innerHTML = '';
   sessoes.forEach(s => {
