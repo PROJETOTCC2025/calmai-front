@@ -5,51 +5,70 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Calma Aí - Usuário</title>
   <link rel="stylesheet" href="TelaPaciente.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
-  
   <div class="container">
+
+    <!-- Header -->
     <header>
       <h1>CALMA AÍ</h1>
-     
+      <div class="acoes-header">
+        <a href="../faleconosco/faleconosco.html" class="icon-header" title="Fale Conosco">
+          <i class="fa-solid fa-comment-dots"></i>
+        </a>
+        <a href="../TelaDeAcesso/TelaDeAcesso.html" class="icon-header sair" title="Sair">
+          <i class="fa-solid fa-right-from-bracket"></i>
+        </a>
+      </div>
     </header>
 
-    <div class="imagem-topo">
-    <img src="jovem.png" alt="Imagem do usuário" class="imagem-jovem">
-  </div>
+    <!-- Perfil do Usuário -->
+    <div class="perfil-usuario">
+      <img src="jovem.png" alt="Imagem do usuário" class="imagem-jovem">
+      <div class="info-usuario">
+        <h2>Olá, Aline 👋</h2>
+        <p class="slogan">Seu espaço de calma e apoio emocional!</p>
+      </div>
+    </div>
 
-
-     <h2>Olá, Aline 👋</h2>
-      <p class="slogan">Seu espaço de calma e apoio emocional!</p>
-
+    <!-- Agenda Mensal -->
     <section class="secao">
       <h2>Agenda Mensal</h2>
       <div id="calendario" class="calendario"></div>
       <p id="dataSelecionada" class="data-info">Nenhum dia selecionado</p>
     </section>
 
+    <!-- Botão Agendar -->
     <button class="btn agendar" onclick="agendarSessao()">Agendar nova sessão</button>
+
+    <!-- Próximas Sessões -->
     <section class="secao">
       <h2>Próximas Sessões</h2>
       <ul id="proximas-sessoes"></ul>
     </section>
 
+    <!-- Botão de Urgência -->
     <a href="../botaopanico/panico.html" class="btn urgencia">🚨 Botão do Pânico</a>
   </div>
 
-  <!-- Menu inferior -->
+  <!-- Menu Inferior -->
   <nav class="menu-app" aria-label="Menu principal">
-    <a href="..//TelaPaciente/TelaPaciente.html" class="menu-item">
+    <a href="../TelaPaciente/TelaPaciente.html" class="menu-item ativo">
+      <i class="fa-solid fa-house"></i>
       <p>Início</p>
     </a>
-    <a href="..//TelaChat/TelaChat.html" class="menu-item">
+    <a href="../TelaChat/TelaChat.html" class="menu-item">
+      <i class="fa-solid fa-comments"></i>
       <p>Chat</p>
     </a>
-    <a href="..//guia de boas praticas/boas-praticas.html" class="menu-item ativo">
-      <p> Boas Práticas</p>
+    <a href="../guia de boas praticas/boas-praticas.html" class="menu-item">
+      <i class="fa-solid fa-leaf"></i>
+      <p>Boas Práticas</p>
     </a>
-    <a href="..//planosuser/planos.html" class="menu-item">
-      <p> Planos</p>
+    <a href="../planosuser/planos.html" class="menu-item">
+      <i class="fa-solid fa-heart"></i>
+      <p>Planos</p>
     </a>
   </nav>
 
