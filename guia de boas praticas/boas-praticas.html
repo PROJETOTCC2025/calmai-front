@@ -1,82 +1,211 @@
 <!DOCTYPE html>
+
 <html lang="pt-BR">
+
 <head>
+
   <meta charset="UTF-8" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <title>Calma Aí - Boas Práticas</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link rel="stylesheet" href="boas-praticas.css" />
+  <link rel="stylesheet" href="../estilosGerais/menu.css">
+  <link rel="stylesheet" href="../estilosGerais/header.css">
+
 </head>
+
 <body>
+
+  <header>
+    <h1>CalmaAí</h1>
+  </header>
+
+
   <main class="container">
-    <header>
-      <h1>Guia de Boas Práticas</h1>
-      <p class="slogan">Cuide do seu bem-estar com hábitos saudáveis</p>
-    </header>
+
+    <!-- Cabeçalho com logo, fale conosco e sair -->
+
+
+
+
+    <p class="slogan">Guia de boas práticas para o seu bem-estar <br>
+
+      Aqui você encontra dicas práticas para manter uma vida equilibrada: alimentação saudável, exercícios simples para
+      o dia a dia, técnicas de respiração para reduzir o estresse, acompanhamento do seu humor e orientações para
+      melhorar a qualidade do sono.</p>
+
+
 
     <!-- Accordion -->
+
     <section class="accordion-container">
-      <div class="accordion-item">
-        <button class="accordion" aria-expanded="false">🌬️ Respiração</button>
-        <div class="panel">
-          <p>Pratique respiração profunda por 5 minutos ao acordar e antes de dormir. Inspire pelo nariz, segure por 4 segundos e expire lentamente.</p>
-          <iframe width="100%" height="200" src="https://www.youtube.com/watch?v=kiEmbhvv7Fo" title="Técnica de Respiração Guiada" allowfullscreen></iframe>
-        </div>
-      </div>
 
       <div class="accordion-item">
-        <button class="accordion" aria-expanded="false">🧘 Yoga</button>
+
+        <button class="accordion" aria-expanded="false">Respiração</button>
+
         <div class="panel">
-          <p>Inclua 10 minutos de yoga no seu dia. Comece com posturas simples como a “Postura da Criança” e “Cachorro Olhando para Baixo”.</p>
-          <iframe width="100%" height="200" src="https://www.youtube.com/watch?v=x-UGt6cXtrU" title="Aula de Yoga para Iniciantes" allowfullscreen></iframe>
+
+          <p>Pratique respiração profunda por 5 minutos ao acordar e antes de dormir. Inspire pelo nariz, segure por 4
+            segundos e expire lentamente.</p>
+
+          <iframe width="100%" height="200" src="https://www.youtube.com/embed/kiEmbhvv7Fo"
+            title="Técnica de Respiração Guiada" allowfullscreen></iframe>
+
         </div>
+
       </div>
 
-      <div class="accordion-item">
-        <button class="accordion" aria-expanded="false">🥗 Alimentação</button>
-        <div class="panel">
-          <p>Mantenha uma alimentação equilibrada com frutas, legumes, proteínas e muita água. Evite excesso de cafeína e açúcar.</p>
-          <iframe width="100%" height="200" src="https://www.youtube.com/watch?v=w91GkbV80BM" title="Alimentação Saudável e Equilíbrio" allowfullscreen></iframe>
-        </div>
-      </div>
+
 
       <div class="accordion-item">
-        <button class="accordion" aria-expanded="false">😴 Sono</button>
+
+        <button class="accordion" aria-expanded="false">Yoga</button>
+
         <div class="panel">
+
+          <p>Inclua 10 minutos de yoga no seu dia. Comece com posturas simples como a “Postura da Criança” e “Cachorro
+            Olhando para Baixo”.</p>
+
+          <iframe width="100%" height="200" src="https://www.youtube.com/embed/x-UGt6cXtrU"
+            title="Aula de Yoga para Iniciantes" allowfullscreen></iframe>
+
+        </div>
+
+      </div>
+
+
+
+      <div class="accordion-item">
+
+        <button class="accordion" aria-expanded="false">Alimentação</button>
+
+        <div class="panel">
+
+          <p>Mantenha uma alimentação equilibrada com frutas, legumes, proteínas e muita água. Evite excesso de cafeína
+            e açúcar.</p>
+
+          <iframe width="100%" height="200" src="https://www.youtube.com/embed/w91GkbV80BM"
+            title="Alimentação Saudável e Equilíbrio" allowfullscreen></iframe>
+
+        </div>
+
+      </div>
+
+
+
+      <div class="accordion-item">
+
+        <button class="accordion" aria-expanded="false">Sono</button>
+
+        <div class="panel">
+
           <p>Estabeleça uma rotina de sono. Evite telas antes de dormir e mantenha um ambiente escuro e silencioso.</p>
-          <iframe width="100%" height="200" src="https://www.youtube.com/watch?v=rCQwOSPM_hk" title="Dicas para Dormir Melhor" allowfullscreen></iframe>
+
+          <iframe width="100%" height="200" src="https://www.youtube.com/embed/rCQwOSPM\_hk"
+            title="Dicas para Dormir Melhor" allowfullscreen></iframe>
+
         </div>
+
       </div>
+
     </section>
+
+
 
     <!-- Mapa de Humor -->
+
     <section class="humor">
+
       <h2>📊 Mapa de Humor</h2>
+
       <p class="emojis">😊 😐 😢 😠</p>
+
       <p id="ultimoRegistro">Último registro: 14/09 - 😊</p>
+
       <button class="btn-humor" onclick="registrarHumor()">Registrar humor</button>
+
     </section>
+
+
+    <button class="btn-urgencia" data-bs-toggle="modal" data-bs-target="#exampleModal">
+      🚨 Atendimento Imediato com Profissional
+    </button>
+
   </main>
 
-  <!-- Menu inferior -->
-  <nav class="menu-app">
-    <a href="..//TelaPaciente/TelaPaciente.html" class="menu-item">
+
+
+  <!-- Menu Inferior -->
+
+  <nav class="menu-app" aria-label="Menu principal">
+
+    <a href="../TelaPaciente/TelaPaciente.html" class="menu-item">
+
+      <i class="fa-solid fa-house"></i>
+
       <p>Início</p>
-      <a href="..//TelaPaciente/TelaPaciente.html"></a>
+
     </a>
-    <a href="..//botaopanico/panico.html" class="menu-item">
-      <p> Pânico</p>
-      <a href="..//botaopanico/panico.html"></a>
-    </a>
-    <a href="..//faleconosco/faleconosco.html" class="menu-item">
-      <p> Contato</p>
-      <a href="..//faleconosco/faleconosco.html"></a>
-    </a>
-    <a href="..//TelaChat/TelaChat.html" class="menu-item">
+
+    <a href="../TelaChat/TelaChat.html" class="menu-item">
+
+      <i class="fa-solid fa-comments"></i>
+
       <p>Chat</p>
-      <a href="..//TelaChat/TelaChat.html"></a>
+
     </a>
+
+    <a href="../guia de boas praticas/boas-praticas.html" class="menu-item ativo">
+
+      <i class="fa-solid fa-leaf"></i>
+
+      <p>Boas Práticas</p>
+
+    </a>
+
+    <a href="../planosuser/planos.html" class="menu-item">
+
+      <i class="fa-solid fa-heart"></i>
+
+      <p>Planos</p>
+
+    </a>
+
   </nav>
 
+
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Atendimento!</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p>
+            🚨 Atendimento imediato acionado! Um profissional será contatado.
+          </p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-help" data-bs-dismiss="modal">Entendido</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
   <script src="boas-praticas.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+    crossorigin="anonymous"></script>
 </body>
+
 </html>

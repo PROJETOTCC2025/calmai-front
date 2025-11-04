@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Controle Financeiro</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #dbd8d8;
+        }
+
+        /* Barra fixa superior */
+        .top-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 80px;
+            background-color: #ffffff;
+            /* marrom */
+            color: rgb(0, 0, 0);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+        }
+
+        .top-bar h1 {
+            margin: 0;
+            font-size: 1.8rem;
+        }
+
+        .notifications {
+            display: flex;
+            flex-direction: column;
+            font-size: 0.9rem;
+            text-align: right;
+        }
+
+        .notifications span {
+            margin-bottom: 3px;
+        }
+
+        /* Conteúdo principal */
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .grid {
+            display: grid;
+            gap: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        }
+
+        .card {
+            background-color: #d8cec6;
+            /* marrom */
+            color: rgb(255, 255, 255);
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .card h2 {
+            margin: 0 0 10px 0;
+            text-transform: capitalize;
+        }
+
+        .card input {
+            width: 100%;
+            padding: 8px;
+            margin-top: 10px;
+            border-radius: 5px;
+            border: none;
+            font-size: 1rem;
+
+        }
+
+        .card p {
+            margin: 5px 0;
+            font-weight: bold;
+        }
+
+        .total {
+            margin-top: 40px;
+            padding: 20px;
+            background-color: #f3f3f3;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .total h2 {
+            margin: 0;
+        }
+
+        .total p {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+            background-color: #fff;
+            border-bottom: 1px solid #C2B8AE;
+            margin: 0;
+            width: 100%;
+
+        }
+
+        header h1 {
+            font-size: 1.2rem;
+            color: #8B5E3C;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>CALMA AÍ</h1>
+    </header>
+
+    <div class="container">
+        <h1 class="financial-title">Controle Financeiro</h1>
+        <div class="grid">
+            <div class="card" data-plano="free">
+                <h2>Free</h2>
+                <p>Valor por cliente: R$0,00</p>
+                <input type="number" min="0" value="0" placeholder="Quantidade de clientes">
+                <p>Total: R$0,00</p>
+            </div>
+            <div class="card" data-plano="basic">
+                <h2>Basic</h2>
+                <p>Valor por cliente: R$49,90</p>
+                <input type="number" min="0" value="0" placeholder="Quantidade de clientes">
+                <p>Total: R$0,00</p>
+            </div>
+            <div class="card" data-plano="premium">
+                <h2>Premium</h2>
+                <p>Valor por cliente: R$89,90</p>
+                <input type="number" min="0" value="0" placeholder="Quantidade de clientes">
+                <p>Total: R$0,00</p>
+            </div>
+            <div class="card" data-plano="plus">
+                <h2>Plus</h2>
+                <p>Valor por cliente: R$129,90</p>
+                <input type="number" min="0" value="0" placeholder="Quantidade de clientes">
+                <p>Total: R$0,00</p>
+            </div>
+        </div>
+
+        <div class="total">
+            <h2>Total geral</h2>
+            <p>R$0,00</p>
+        </div>
+
+        <div class="total">
+            <h2>Datas</h2>
+            <span>Pagamento Basic: 05/11/2025</span>
+            <span>Pagamento Premium: 08/11/2025</span>
+            <span>Pagamento Plus: 10/11/2025</span>
+        </div>
+
+        <script>
+            const valores = {
+                free: 0,
+                basic: 49.90,
+                premium: 89.90,
+                plus: 129.90
+            };
+
+            const cards = document.querySelectorAll('.card');
+            const totalGeral = document.querySelector('.total p');
+
+            cards.forEach(card => {
+                const input = card.querySelector('input');
+                const totalCard = card.querySelector('p:last-child');
+                const plano = card.dataset.plano;
+
+                input.addEventListener('input', () => {
+                    const quantidade = Number(input.value);
+                    const total = quantidade * valores[plano];
+                    totalCard.textContent = `Total: R$${total.toFixed(2)}`;
+                    atualizarTotalGeral();
+                });
+            });
+
+            function atualizarTotalGeral() {
+                let total = 0;
+                cards.forEach(card => {
+                    const plano = card.dataset.plano;
+                    const quantidade = Number(card.querySelector('input').value);
+                    total += quantidade * valores[plano];
+                });
+                totalGeral.textContent = `R$${total.toFixed(2)}`;
+            }
+        </script>
+</body>
+
+</html>

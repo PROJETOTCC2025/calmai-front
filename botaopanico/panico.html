@@ -5,24 +5,19 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Botão do Pânico</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link rel="stylesheet" href="panico.css">
+  <link rel="stylesheet" href="../estilosGerais/menu.css">
+  <link rel="stylesheet" href="../estilosGerais/header.css">
 </head>
 
 <body>
 
   <header>
-    <h1>CALMA AÍ</h1>
-  
+    <h1>CalmaAí</h1>
   </header>
-
-
- 
- 
-
-  <audio id="calmSound" loop>
-    <!-- Substitua este link por um som relaxante do seu servidor -->
-    <source src="https://video.zig.ht/v/d56dqvfk3ajd0b3jp1pjo" type="audio/mpeg">
-  </audio>
 
   <div class="container">
     <div class="safe-text">Respire fundo... você está em um lugar seguro.</div>
@@ -33,9 +28,7 @@
     </div>
 
     <div class="help-buttons">
-      <button class="btn-help" onclick="alert('Chamando atendimento imediato...')">
-        Preciso de ajuda agora
-      </button>
+      <button class="btn-help" data-bs-toggle="modal" data-bs-target="#exampleModal">preciso de ajuda</button>
       <button class="btn-cvv" onclick="window.location.href='tel:188'">
         Ligar para o CVV (188)
       </button>
@@ -44,52 +37,71 @@
   </div>
 
 
-   <!-- Menu inferior -->
+
+  <!-- Menu Inferior -->
   <nav class="menu-app" aria-label="Menu principal">
-    <a href="..//TelaPaciente/TelaPaciente.html" class="menu-item">
+
+    <a href="../TelaPaciente/TelaPaciente.html" class="menu-item ativo">
+
+      <i class="fa-solid fa-house"></i>
+
       <p>Início</p>
+
     </a>
-    <a href="..//TelaChat/TelaChat.html" class="menu-item">
+
+    <a href="../TelaChat/TelaChat.html" class="menu-item">
+
+      <i class="fa-solid fa-comments"></i>
+
       <p>Chat</p>
+
     </a>
-    <a href="..//guia de boas praticas/boas-praticas.html" class="menu-item ativo">
+
+    <a href="../guia de boas praticas/boas-praticas.html" class="menu-item">
+
+      <i class="fa-solid fa-leaf"></i>
+
       <p>Boas Práticas</p>
+
     </a>
-    <a href="..//planosuser/planos.html" class="menu-item">
-      <p> Planos</p>
+
+    <a href="../planosuser/planos.html" class="menu-item">
+
+      <i class="fa-solid fa-heart"></i>
+
+      <p>Planos</p>
+
     </a>
+
   </nav>
 
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Atenção!</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p>
+            Se você continuar, será iniciada uma
+            <strong>chamada de emergência</strong>
+            no Google Meet com um profissional de apoio.
+          </p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-help" onclick="abrirMeeting()">Continuar</button>
+        </div>
+      </div>
+    </div>
+  </div>
 
-  <script>
-    // Alterna os textos de respiração
-    const breathText = document.getElementById('breathText');
-    const steps = ["Inspire pelo nariz...", "Segure o ar...", "Expire lentamente..."];
-    let i = 0;
 
-    setInterval(() => {
-      i = (i + 1) % steps.length;
-      breathText.textContent = steps[i];
-    }, 4000);
-
-    // Controle de som ambiente
-    const soundBtn = document.getElementById('soundBtn');
-    const calmSound = document.getElementById('calmSound');
-    let isPlaying = false;
-
-    soundBtn.addEventListener('click', () => {
-      if (isPlaying) {
-        calmSound.pause();
-        soundBtn.textContent = "🔈";
-        soundBtn.title = "Ativar som";
-      } else {
-        calmSound.play();
-        soundBtn.textContent = "🔊";
-        soundBtn.title = "Desativar som";
-      }
-      isPlaying = !isPlaying;
-    });
-  </script>
+  <script src="panico.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+    crossorigin="anonymous"></script>
 
 </body>
 

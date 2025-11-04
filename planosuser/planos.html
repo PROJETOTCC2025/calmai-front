@@ -1,79 +1,114 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Planos - Calma Aí</title>
-  <link rel="stylesheet" href="planos.css">
 
-   <header>
-    <header>
-        <h1>Planos Disponíveis</h1>
-        <p>Escolha o plano ideal para você</p>
-      </header>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="planos.css">
+  <link rel="stylesheet" href="../estilosGerais/menu.css">
+  <link rel="stylesheet" href="../estilosGerais/header.css">
+
+  <header>
+    <h1>CalmaAí</h1>
+  </header>
+
+  
+  
+  <div class="planos-container">
+    <h2>Planos Disponíveis</h2>
+    <p>Escolha o plano ideal para você</p>
     
-      <div class="planos-container">
-        <!-- Plano Basic -->
-        <div class="plano">
-          <div class="plano-title">Basic</div>
-          <div class="plano-description">
-            Inclui <strong>1 sessão por semana</strong>, com um <strong>cancelamento grátis por mês</strong>.<br><strong>R$49,90 por mês.</strong>
-          </div>
-          <button class="btn-assinar" onclick="assinarPlano('Basic')">Assinar</button>
-        </div>
-    
-        <!-- Plano Premium -->
-        <div class="plano">
-          <div class="plano-title">Premium</div>
-          <div class="plano-description">
-            Inclui <strong>2 sessões por semana</strong>, com direito a <strong>2 cancelamentos grátis por mês</strong>.<br><strong>R$89,90 por mês.</strong>
-          </div>
-          <button class="btn-assinar" onclick="assinarPlano('Premium')">Assinar</button>
-        </div>
-    
-        <!-- Plano Plus -->
-        <div class="plano">
-          <div class="plano-title">Plus</div>
-          <div class="plano-description">
-            Agende <strong>quantas sessões quiser por semana</strong>, com <strong>cancelamentos ilimitados sem taxa extra</strong>.<br><strong>R$129,90 por mês.</strong>
-          </div>
-          <button class="btn-assinar" onclick="assinarPlano('Plus')">Assinar</button>
-        </div>
-    
-        <!-- Plano Free -->
-        <div class="plano">
-          <div class="plano-title">Free</div>
-          <div class="plano-description">
-            Inclui <strong>1 sessão gratuita</strong> sem compromisso.
-          </div>
-          <button class="btn-assinar" onclick="assinarPlano('Free')">Assinar</button>
-        </div>
+    <!-- Plano Basic -->
+    <div class="plano">
+      <div class="plano-title">Basic</div>
+      <div class="plano-description">
+        Inclui <strong>1 sessão por semana</strong>, com um <strong>cancelamento grátis por
+          mês</strong>.<br><strong>R$49,90 por mês.</strong>
       </div>
-    
- <!-- Menu inferior -->
+      <button class="btn-assinar" onclick="assinarPlano('Basic')">Assinar</button>
+    </div>
+
+    <!-- Plano Premium -->
+    <div class="plano">
+      <div class="plano-title">Premium</div>
+      <div class="plano-description">
+        Inclui <strong>2 sessões por semana</strong>, com direito a <strong>2 cancelamentos grátis por
+          mês</strong>.<br><strong>R$89,90 por mês.</strong>
+      </div>
+      <button class="btn-assinar" onclick="assinarPlano('Premium')">Assinar</button>
+    </div>
+
+    <!-- Plano Plus -->
+    <div class="plano">
+      <div class="plano-title">Plus</div>
+      <div class="plano-description">
+        Agende <strong>quantas sessões quiser por semana</strong>, com <strong>cancelamentos ilimitados sem taxa
+          extra</strong>.<br><strong>R$129,90 por mês.</strong>
+      </div>
+      <button class="btn-assinar" onclick="assinarPlano('Plus')">Assinar</button>
+    </div>
+
+    <!-- Plano Free -->
+    <div class="plano">
+      <div class="plano-title">Free</div>
+      <div class="plano-description">
+        Inclui <strong>1 sessão gratuita</strong> sem compromisso.
+      </div>
+      <button class="btn-assinar" onclick="assinarPlano('Free')">Assinar</button>
+    </div>
+  </div>
+
+
+  <!-- Menu Inferior -->
+
   <nav class="menu-app" aria-label="Menu principal">
-    <a href="..//TelaPaciente/TelaPaciente.html" class="menu-item">
+
+    <a href="../TelaPaciente/TelaPaciente.html" class="menu-item">
+
+      <i class="fa-solid fa-house"></i>
+
       <p>Início</p>
+
     </a>
-    <a href="..//TelaChat/TelaChat.html" class="menu-item">
+
+    <a href="../TelaChat/TelaChat.html" class="menu-item">
+
+      <i class="fa-solid fa-comments"></i>
+
       <p>Chat</p>
+
     </a>
-    <a href="..//guia de boas praticas/boas-praticas.html" class="menu-item ativo">
-      <p> Boas Práticas</p>
+
+    <a href="../guia de boas praticas/boas-praticas.html" class="menu-item">
+
+      <i class="fa-solid fa-leaf"></i>
+
+      <p>Boas Práticas</p>
+
     </a>
-    <a href="..//planosuser/planos.html" class="menu-item">
-      <p> Planos</p>
+
+    <a href="../planosuser/planos.html" class="menu-item ativo">
+
+      <i class="fa-solid fa-heart"></i>
+
+      <p>Planos</p>
+
     </a>
+
   </nav>
 
 
 
 
-      <script>
-        function assinarPlano(plano) {
-          alert("Você escolheu o plano: " + plano);
-          // Aqui você pode redirecionar, enviar dados para o backend, etc.
-        }
-      </script>
-    </body>
-    </html>
+  <script>
+    function assinarPlano(plano) {
+      alert("Você escolheu o plano: " + plano);
+      // Aqui você pode redirecionar, enviar dados para o backend, etc.
+    }
+  </script>
+  </body>
+
+</html>

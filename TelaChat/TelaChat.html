@@ -1,46 +1,128 @@
 <!DOCTYPE html>
+
 <html lang="pt-BR">
+
 <head>
+
   <meta charset="UTF-8">
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>Calma Aí - Chat com IA</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link rel="stylesheet" href="chat.css">
+  <link rel="stylesheet" href="../estilosGerais/menu.css">
+  <link rel="stylesheet" href="../estilosGerais/header.css">
+
 </head>
+
 <body>
+
+  <header>
+    <h1>CalmaAí</h1>
+  </header>
+
   <div class="container">
-    <header>
-        <H1>Calma Aí - Chat com IA</H1>
-      <h1>Olá, Aline 👋</h1>
+
+    <div class="saudacao">
+      <h2>Olá, Aline 👋</h2>
       <p class="slogan">Vamos começar com algumas perguntas para te conhecer melhor.</p>
-    </header>
+    </div>
+
+
+    <!-- Área do chat -->
 
     <div id="chat" class="chat-box"></div>
 
+
+
+    <!-- Campo de digitação -->
+
     <div class="input-area">
+
       <input type="text" id="mensagemInput" placeholder="Digite sua resposta..." />
+
       <button onclick="responder()">Enviar</button>
+
     </div>
 
-    <button class="btn urgencia" onclick="acionarUrgencia()">🚨 Atendimento Imediato com profissional</button>
+
+
+    <!-- Botão de urgência -->
+
+    <button class="btn-urgencia" data-bs-toggle="modal" data-bs-target="#exampleModal">🚨 Atendimento Imediato com profissional</button>
+
   </div>
 
-   <!-- Menu inferior -->
+
+
+  <!-- Menu Inferior -->
+
   <nav class="menu-app" aria-label="Menu principal">
-    <a href="..//TelaPaciente/TelaPaciente.html" class="menu-item">
+
+    <a href="../TelaPaciente/TelaPaciente.html" class="menu-item">
+
+      <i class="fa-solid fa-house"></i>
+
       <p>Início</p>
+
     </a>
-    <a href="..//TelaChat/TelaChat.html" class="menu-item">
+
+    <a href="../TelaChat/TelaChat.html" class="menu-item ativo">
+
+      <i class="fa-solid fa-comments"></i>
+
       <p>Chat</p>
+
     </a>
-    <a href="..//guia de boas praticas/boas-praticas.html" class="menu-item ativo">
-      <p> Boas Práticas</p>
+
+    <a href="../guia de boas praticas/boas-praticas.html" class="menu-item">
+
+      <i class="fa-solid fa-leaf"></i>
+
+      <p>Boas Práticas</p>
+
     </a>
-    <a href="..//planosuser/planos.html" class="menu-item">
-      <p> Planos</p>
+
+    <a href="../planosuser/planos.html" class="menu-item">
+
+      <i class="fa-solid fa-heart"></i>
+
+      <p>Planos</p>
+
     </a>
+
   </nav>
+
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Atendimento!</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p>
+            🚨 Atendimento imediato acionado! Um profissional será contatado.
+          </p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-help" data-bs-dismiss="modal">Entendido</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
 
 
   <script src="chat.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+    crossorigin="anonymous"></script>
 </body>
+
 </html>

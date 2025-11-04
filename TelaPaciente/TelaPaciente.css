@@ -1,151 +1,259 @@
-/* Reset básico */
 * {
+
   box-sizing: border-box;
+
   margin: 0;
+
   padding: 0;
+
 }
+
+
 
 body {
+
   font-family: 'Inter', sans-serif;
+
   background-color: #F5EDE4;
+
   color: #5D4A3C;
-  padding-bottom: 90px; /* espaço para menu fixo */
+
+  padding-bottom: 90px;
+
 }
 
-/* Container central */
+
+
+
+
 .container {
+
   max-width: 420px;
+
   min-width: 300px;
+
   margin: auto;
+
   padding: 20px;
+
 }
 
-/* Header */
-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: #fff;
-  border-bottom: 1px solid #C2B8AE;
-  padding: 10px 20px;
-  margin-bottom: 15px;
-  position: sticky;
-  top: 0;
-  z-index: 10;
-}
 
-header h1 {
-  font-size: 1.3rem;
-  color: #8B5E3C;
-}
+
+
+
+
+
+
 
 .acoes-header {
   display: flex;
+  justify-content: flex-end;
   gap: 12px;
+  padding-bottom: 16px;
 }
+
+
 
 .icon-header {
+
   font-size: 1.3rem;
+
   color: #8B5E3C;
+
   background-color: #FAF6F2;
+
   border: 1px solid #C2B8AE;
+
   padding: 8px;
+
   border-radius: 8px;
+
   transition: background-color 0.3s;
+
 }
+
+
 
 .icon-header:hover {
+
   background-color: #EADAC8;
+
 }
+
+
 
 .icon-header.sair {
+
   color: #8B0000;
+
   border-color: #8B0000;
+
 }
 
-/* Perfil do Usuário */
+
+
+
+
 .perfil-usuario {
+
   display: flex;
+
   align-items: center;
+
   gap: 15px;
+
   background-color: #fff;
+
   border-radius: 10px;
+
   padding: 15px;
+
   margin-bottom: 20px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+
 }
+
+
 
 .imagem-jovem {
+
   width: 90px;
+
   height: 90px;
+
   border-radius: 50%;
+
   object-fit: cover;
+
 }
+
+
 
 .info-usuario h2 {
+
   font-size: 1.1rem;
+
   color: #8B5E3C;
+
   margin-bottom: 4px;
+
 }
+
+
 
 .info-usuario .slogan {
+
   font-size: 0.9rem;
+
   color: #7D6E63;
+
 }
 
-/* Seções */
+
+
 .secao {
+
   background-color: #fff;
+
   border-radius: 10px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+
   padding: 15px;
+
   margin-bottom: 20px;
+
 }
+
+
 
 h2 {
+
   font-size: 18px;
+
   color: #A67C52;
+
   margin-bottom: 10px;
+
 }
 
-/* Lista de sessões */
+
+
 ul {
+
   list-style: none;
 }
 
+
+
 ul li {
+
   background-color: #FAF6F2;
+
   border: 1px solid #C2B8AE;
+
   border-radius: 6px;
+
   padding: 10px;
+
   margin-bottom: 8px;
+
   font-size: 14px;
+
 }
 
-/* Botões */
+
+
+
+
 .btn {
+
   display: block;
+
   width: 100%;
+
   padding: 12px;
+
   border: none;
+
   border-radius: 8px;
+
   font-weight: bold;
+
   margin-bottom: 15px;
+
   cursor: pointer;
+
   font-size: 16px;
+
   text-align: center;
+
   text-decoration: none;
+
 }
 
-/* Botão Agendar */
+
+
+
+
 .agendar {
+
   background-color: #A67C52;
+
   color: white;
+
 }
 
-/* Botão do Pânico */
+
+
+
+
 .urgencia {
+
   background-color: #8B0000;
+
   color: white;
   font-weight: bold;
   font-size: 18px;
@@ -176,73 +284,121 @@ ul li {
   padding: 10px;
   border-radius: 8px;
   border: 1px solid #C2B8AE;
+
+  font-weight: bold;
+
+  font-size: 18px;
+
+  padding: 16px;
+
+  border-radius: 12px;
+
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+
 }
 
-.calendario div {
+
+
+.urgencia:hover {
+
+  transform: scale(1.05);
+
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.3);
+
+}
+
+
+
+@keyframes pulse {
+
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 0 rgba(255, 0, 0, 0.7);
+  }
+
+  50% {
+    transform: scale(1.03);
+    box-shadow: 0 0 20px rgba(255, 0, 0, 0.8);
+  }
+
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 rgba(255, 0, 0, 0.7);
+  }
+
+}
+
+
+
+
+
+.calendario {
+
+  display: grid;
+
+  grid-template-columns: repeat(7, 1fr);
+
+  gap: 6px;
+
+  background-color: #FAF6F2;
+
   padding: 10px;
+
+  border-radius: 8px;
+
+  border: 1px solid #C2B8AE;
+
+}
+
+
+
+.calendario div {
+
+  padding: 10px;
+
   background-color: #F5EDE4;
+
   border-radius: 5px;
+
   text-align: center;
+
   cursor: pointer;
+
   font-size: 14px;
   transition: background-color 0.3s;
 }
 
 .calendario div:hover { background-color: #A67C52; color: white; }
 .calendario .selecionado { background-color: #8B5E3C; color: white; }
-.calendario .hoje { border: 2px solid #A67C52; font-weight: bold; }
+.calendario .hoje {
+  border: 2px solid #A67C52; font-weight: bold; 
+  transition: background-color 0.3s;
+}
+
+.calendario div:hover {
+  background-color: #A67C52;
+  color: white;
+}
+
+.calendario .selecionado {
+  background-color: #8B5E3C;
+  color: white;
+}
+
+.calendario .hoje {
+  border: 2px solid #A67C52;
+  font-weight: bold;
+}
 
 .data-info {
+
   margin-top: 10px;
+
   font-size: 14px;
+
   color: #7D6E63;
+
   text-align: center;
-}
-
-/* Menu inferior responsivo */
-.menu-app {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background-color: #F5EDE4;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  padding: 10px 0;
-  border-top: 1px solid #C2B8AE;
-  box-shadow: 0 -2px 6px rgba(0,0,0,0.1);
-  z-index: 1000;
-}
-
-.menu-item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-decoration: none;
-  color: #8B5E3C;
-  font-size: 13px;
-  border-radius: 10px;
-  width: 24%;
-  padding: 6px 0;
-  transition: background-color 0.3s ease, transform 0.2s ease;
-}
-
-.menu-item i {
-  font-size: 18px;
-  margin-bottom: 3px;
-}
-
-.menu-item:hover,
-.menu-item.ativo {
-  background-color: #FAF6F2;
-  transform: scale(1.05);
-}
-
-/* Responsivo */
-@media (max-width: 600px) {
-  .container { padding: 15px; }
-  .perfil-usuario { flex-direction: column; text-align: center; }
-  .menu-item { font-size: 12px; }
-  .menu-item i { font-size: 16px; }
 }
