@@ -6,7 +6,11 @@ header {
   border-bottom: 1px solid #C2B8AE;
   padding: 10px 20px;
   position: sticky;
+  top: 0;           /* 🔥 garante que o sticky funcione corretamente */
+  width: 100%;      /* 🔥 força a faixa a ocupar toda a tela */
+  z-index: 1000;    /* 🔥 evita que algo fique por cima */
 }
+
 
 
 
