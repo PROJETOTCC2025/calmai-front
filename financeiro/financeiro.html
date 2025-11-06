@@ -5,6 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Controle Financeiro</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="../estilosGerais/menu.css">
+    <link rel="stylesheet" href="../estilosGerais/header.css">
     <style>
         * {
             padding: 0;
@@ -14,7 +17,7 @@
 
         body {
             font-family: Arial, sans-serif;
-            background-color: #dbd8d8;
+            background-color: #f7ebdf;
         }
 
         /* Barra fixa superior */
@@ -65,8 +68,7 @@
         }
 
         .card {
-            background-color: #d8cec6;
-            /* marrom */
+            background-color: #b48b67;
             color: rgb(255, 255, 255);
             border-radius: 10px;
             padding: 20px;
@@ -107,26 +109,14 @@
         }
 
         .total p {
-            font-size: 1.5rem;
-            font-weight: bold;
+            font-size: 1rem;
             margin-top: 10px;
         }
 
-        header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px 0;
-            background-color: #fff;
-            border-bottom: 1px solid #C2B8AE;
-            margin: 0;
-            width: 100%;
-
-        }
-
-        header h1 {
-            font-size: 1.2rem;
-            color: #8B5E3C;
+        .titulo {
+            padding-bottom: 20px;
+            color: #5e4b3c;
+            text-align: center;
         }
     </style>
 </head>
@@ -134,11 +124,11 @@
 <body>
 
     <header>
-        <h1>CALMA AÍ</h1>
+        <h1>CalmaAí</h1>
     </header>
 
     <div class="container">
-        <h1 class="financial-title">Controle Financeiro</h1>
+        <h1 class="titulo">Controle Financeiro</h1>
         <div class="grid">
             <div class="card" data-plano="free">
                 <h2>Free</h2>
@@ -173,45 +163,74 @@
 
         <div class="total">
             <h2>Datas</h2>
-            <span>Pagamento Basic: 05/11/2025</span>
-            <span>Pagamento Premium: 08/11/2025</span>
-            <span>Pagamento Plus: 10/11/2025</span>
+            <p>Pagamento Basic: 05/11/2025</p>
+            <p>Pagamento Premium: 08/11/2025</p>
+            <p>Pagamento Plus: 10/11/2025</p>
         </div>
 
-        <script>
-            const valores = {
-                free: 0,
-                basic: 49.90,
-                premium: 89.90,
-                plus: 129.90
-            };
+    </div>
 
-            const cards = document.querySelectorAll('.card');
-            const totalGeral = document.querySelector('.total p');
 
-            cards.forEach(card => {
-                const input = card.querySelector('input');
-                const totalCard = card.querySelector('p:last-child');
-                const plano = card.dataset.plano;
+    <!-- MENU INFERIOR -->
+    <nav class="menu-app">
+        <a href="../profissional/profissionalindex.html" class="menu-item ativo">
+            <i class="fa-solid fa-house"></i>
+            <span>Início</span>
+        </a>
 
-                input.addEventListener('input', () => {
-                    const quantidade = Number(input.value);
-                    const total = quantidade * valores[plano];
-                    totalCard.textContent = `Total: R$${total.toFixed(2)}`;
-                    atualizarTotalGeral();
-                });
+        <a href="../profissional/novos-clientes.html" class="menu-item">
+            <i class="fa-solid fa-user-plus"></i>
+            <span>Novos Clientes</span>
+        </a>
+
+        <a href="../profissional/meus-pacientes.html" class="menu-item">
+            <i class="fa-solid fa-users"></i>
+            <span>Meus Pacientes</span>
+        </a>
+
+        <a href="financeiro.html" class="menu-item">
+            <i class="fa-solid fa-wallet"></i>
+            <span>Financeiro</span>
+        </a>
+
+    </nav>
+
+
+
+    <script>
+        const valores = {
+            free: 0,
+            basic: 49.90,
+            premium: 89.90,
+            plus: 129.90
+        };
+
+        const cards = document.querySelectorAll('.card');
+        const totalGeral = document.querySelector('.total p');
+
+        cards.forEach(card => {
+            const input = card.querySelector('input');
+            const totalCard = card.querySelector('p:last-child');
+            const plano = card.dataset.plano;
+
+            input.addEventListener('input', () => {
+                const quantidade = Number(input.value);
+                const total = quantidade * valores[plano];
+                totalCard.textContent = `Total: R$${total.toFixed(2)}`;
+                atualizarTotalGeral();
             });
+        });
 
-            function atualizarTotalGeral() {
-                let total = 0;
-                cards.forEach(card => {
-                    const plano = card.dataset.plano;
-                    const quantidade = Number(card.querySelector('input').value);
-                    total += quantidade * valores[plano];
-                });
-                totalGeral.textContent = `R$${total.toFixed(2)}`;
-            }
-        </script>
+        function atualizarTotalGeral() {
+            let total = 0;
+            cards.forEach(card => {
+                const plano = card.dataset.plano;
+                const quantidade = Number(card.querySelector('input').value);
+                total += quantidade * valores[plano];
+            });
+            totalGeral.textContent = `R$${total.toFixed(2)}`;
+        }
+    </script>
 </body>
 
 </html>

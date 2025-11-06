@@ -1,43 +1,39 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Calma Aí - Início</title>
- 
-  
-
-   
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="../estilosGerais/menu.css">
   <link rel="stylesheet" href="../estilosGerais/header.css">
-
-   
-
 </head>
 
-
-
 <body>
-
-
   <header>
-
-    <h1>CALMA AÍ</h1>
-    
+    <h1>CalmaAí</h1>
   </header>
 
- <br><br>
-  <img src="https://png.pngtree.com/png-clipart/20190516/original/pngtree-users-vector-icon-png-image_3725294.jpg" alt="Foto do Psicólogo" class="profile" />
-    <h2>Dr. Pedro Lima 👋</h2>
+  <main class="container">
+    <div class="profile">
+      <img src="https://png.pngtree.com/png-clipart/20190516/original/pngtree-users-vector-icon-png-image_3725294.jpg"
+        alt="Foto do Psicólogo" />
+      <h2>Dr. Pedro Lima 👋</h2>
+    </div>
 
-  <main>
     <!-- CALENDÁRIO -->
     <div class="section">
       <div class="section-title">Agenda Mensal</div>
       <div class="calendar-header">
-        <div>Dom</div><div>Seg</div><div>Ter</div><div>Qua</div><div>Qui</div><div>Sex</div><div>Sab</div>
+        <div>Dom</div>
+        <div>Seg</div>
+        <div>Ter</div>
+        <div>Qua</div>
+        <div>Qui</div>
+        <div>Sex</div>
+        <div>Sab</div>
       </div>
       <div class="calendar" id="calendar"></div>
       <p class="no-selection" id="selected-day">Nenhum dia selecionado</p>
@@ -53,16 +49,29 @@
 
   <!-- MENU INFERIOR -->
   <nav class="menu-app">
-    <a href="profissionalindex.html" class="menu-item ativo">Início</a>
-    <a href="novos-clientes.html" class="menu-item">Novos Clientes</a>
-    <a href="meus-pacientes.html" class="menu-item">Meus Pacientes</a>
-    <a href="financeiro.html" class="menu-item">Financeiro</a>
-    
+    <a href="profissionalindex.html" class="menu-item ativo">
+      <i class="fa-solid fa-house"></i>
+      <span>Início</span>
+    </a>
+
+    <a href="novos-clientes.html" class="menu-item">
+      <i class="fa-solid fa-user-plus"></i>
+      <span>Novos Clientes</span>
+    </a>
+
+    <a href="meus-pacientes.html" class="menu-item">
+      <i class="fa-solid fa-users"></i>
+      <span>Meus Pacientes</span>
+    </a>
+
+    <a href="../financeiro/financeiro.html" class="menu-item">
+      <i class="fa-solid fa-wallet"></i>
+      <span>Financeiro</span>
+    </a>
+
   </nav>
 
   <script src="script.js"></script>
 </body>
+
 </html>
-
-
-

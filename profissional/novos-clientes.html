@@ -1,30 +1,30 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Novos Clientes - Calma Aí</title>
   <link rel="stylesheet" href="style.css" />
-</head>
-<body>
-  <header>
-    <h1>Novos Clientes</h1>
-  </header>
-
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link rel="stylesheet" href="../estilosGerais/menu.css">
   <link rel="stylesheet" href="../estilosGerais/header.css">
+</head>
 
+<body>
 
-  
-
-
-
+  <header>
+    <h1>CalmaAí</h1>
+  </header>
 
   <main>
+    <h1 class="titulo">Novos Clientes</h1>
     <div class="section">
       <table class="clientes-tabela">
-        <tr><th>Nome</th><th>Ações</th></tr>
+        <tr>
+          <th>Nome</th>
+          <th>Ações</th>
+        </tr>
         <tr>
           <td>Joana Silva</td>
           <td><button class="btn-aceitar">Aceitar</button> <button class="btn-recusar">Recusar</button></td>
@@ -44,15 +44,32 @@
       </table>
     </div>
   </main>
-
+  <!-- MENU INFERIOR -->
   <nav class="menu-app">
-    <a href="profissionalindex.html" class="menu-item">Início</a>
-    <a href="novos-clientes.html" class="menu-item ativo">Novos Clientes</a>
-    <a href="meus-pacientes.html" class="menu-item">Meus Pacientes</a>
-    <a href="financeiro.html" class="menu-item">Financeiro</a>
-  
+    <a href="profissionalindex.html" class="menu-item ativo">
+      <i class="fa-solid fa-house"></i>
+      <span>Início</span>
+    </a>
+
+    <a href="novos-clientes.html" class="menu-item">
+      <i class="fa-solid fa-user-plus"></i>
+      <span>Novos Clientes</span>
+    </a>
+
+    <a href="meus-pacientes.html" class="menu-item">
+      <i class="fa-solid fa-users"></i>
+      <span>Meus Pacientes</span>
+    </a>
+
+    <a href="../financeiro/financeiro.html" class="menu-item">
+      <i class="fa-solid fa-wallet"></i>
+      <span>Financeiro</span>
+    </a>
+
   </nav>
+
 
   <script src="script.js"></script>
 </body>
+
 </html>
