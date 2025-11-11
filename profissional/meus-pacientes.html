@@ -5,9 +5,11 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Meus Pacientes - Calma Aí</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <link rel="stylesheet" href="../estilosGerais/menu.css">
+  <link rel="stylesheet" href="../estilosGerais/menu-superior.css">
   <link rel="stylesheet" href="../estilosGerais/header.css">
   <style>
     /* Estilo do conteúdo de histórico dentro do modal */
@@ -33,6 +35,20 @@
     .historico-item:last-child {
       margin-bottom: 0;
     }
+
+    main {
+      width: 100%;
+    }
+
+    .section {
+      margin: auto;
+      width: 80%;
+      max-width: max-content;
+    }
+
+    .dropdown-item {
+      cursor: pointer;
+    }
   </style>
 </head>
 
@@ -42,48 +58,41 @@
     <h1>CalmaAí</h1>
   </header>
 
-  <!-- MENU INFERIOR -->
+  <!-- MENU -->
   <nav class="menu-app">
-    <a href="profissionalindex.html" class="menu-item ativo">Início</a>
-    <a href="..//profissional/novos-clientes.html" class="menu-item">Novos Clientes</a>
-    <a href="..//profissional/meus-pacientes.html" class="menu-item">Meus Pacientes</a>
-    <a href="..//financeiro/financeiro.html" class="menu-item">Financeiro</a>
+    <a href="profissionalindex.html" class="menu-item">
+      <i class="fa-solid fa-house"></i>
+      <span>Início</span>
+    </a>
+
+    <a href="novos-clientes.html" class="menu-item">
+      <i class="fa-solid fa-user-plus"></i>
+      <span>Novos Clientes</span>
+    </a>
+
+    <a href="meus-pacientes.html" class="menu-item ativo">
+      <i class="fa-solid fa-users"></i>
+      <span>Meus Pacientes</span>
+    </a>
+
+    <a href="../financeiro/financeiro.html" class="menu-item">
+      <i class="fa-solid fa-wallet"></i>
+      <span>Financeiro</span>
+    </a>
 
   </nav>
+
   <main>
     <h1 class="titulo">Meus Pacientes</h1>
     <div class="section">
-      <table class="clientes-tabela pacientes">
+      <table class="clientes-tabela pacientes" id="clientes-tabela">
         <tr>
           <th>Nome</th>
-          <th>Ações</th>
-        </tr>
-        <tr>
-          <td>Cassia Starling</td>
-          <td class="acoes">
-            <button onclick="abrirModalDetalhes('Cassia Starling')">Detalhes</button>
-            <button onclick="iniciarConsulta('Cassia Starling')">Iniciar Consulta</button>
-            <button onclick="abrirModalMensagem('Cassia Starling')">Mensagem</button>
-            <button onclick="abrirModalHistorico('Cassia Starling')">Histórico</button>
-          </td>
-        </tr>
-        <tr>
-          <td>Renata Brunner</td>
-          <td class="acoes">
-            <button onclick="abrirModalDetalhes('Renata Brunner')">Detalhes</button>
-            <button onclick="iniciarConsulta('Renata Brunner')">Iniciar Consulta</button>
-            <button onclick="abrirModalMensagem('Renata Brunner')">Mensagem</button>
-            <button onclick="abrirModalHistorico('Renata Brunner')">Histórico</button>
-          </td>
-        </tr>
-        <tr>
-          <td>Lucas Pereira</td>
-          <td class="acoes">
-            <button onclick="abrirModalDetalhes('Lucas Pereira')">Detalhes</button>
-            <button onclick="iniciarConsulta('Lucas Pereira')">Iniciar Consulta</button>
-            <button onclick="abrirModalMensagem('Lucas Pereira')">Mensagem</button>
-            <button onclick="abrirModalHistorico('Lucas Pereira')">Histórico</button>
-          </td>
+          <th>Idade</th>
+          <th>Ultima sessão</th>
+          <th>Prõxima Sessão</th>
+          <th>Objetivo</th>
+          <th></th>
         </tr>
       </table>
     </div>
@@ -97,31 +106,6 @@
       <div id="modal-corpo"></div>
     </div>
   </div>
-
-  <!-- MENU INFERIOR -->
-  <nav class="menu-app">
-    <a href="profissionalindex.html" class="menu-item ativo">
-      <i class="fa-solid fa-house"></i>
-      <span>Início</span>
-    </a>
-
-    <a href="novos-clientes.html" class="menu-item">
-      <i class="fa-solid fa-user-plus"></i>
-      <span>Novos Clientes</span>
-    </a>
-
-    <a href="meus-pacientes.html" class="menu-item">
-      <i class="fa-solid fa-users"></i>
-      <span>Meus Pacientes</span>
-    </a>
-
-    <a href="../financeiro/financeiro.html" class="menu-item">
-      <i class="fa-solid fa-wallet"></i>
-      <span>Financeiro</span>
-    </a>
-
-  </nav>
-
 
   <script>
     // --- Dados simulados ---
@@ -144,26 +128,60 @@
     };
 
     // --- Dados detalhados de pacientes ---
-    const pacientes = {
-      "Cassia Starling": {
+    const pacientes = [
+      {
+        nome: 'Cassia Starling',
         idade: 29,
         ultimaSessao: "15/10/2025",
         proximaSessao: "22/10/2025 - 14h",
         objetivo: "Controle da ansiedade e equilíbrio emocional"
       },
-      "Renata Brunner": {
+      {
+        nome: 'Renata Brunner',
         idade: 35,
         ultimaSessao: "10/10/2025",
         proximaSessao: "17/10/2025 - 16h",
         objetivo: "Melhorar autoconfiança e autoestima"
       },
-      "Lucas Pereira": {
+      {
+        nome: 'Lucas Pereira',
         idade: 41,
         ultimaSessao: "12/10/2025",
         proximaSessao: "19/10/2025 - 15h",
         objetivo: "Gerenciamento de estresse e produtividade"
       }
-    };
+    ];
+
+    function carregarTabela() {
+      const tabelaPacientes = document.getElementById('clientes-tabela');
+
+      for (let paciente of pacientes) {
+        const novaLinha = `
+          <tr>
+            <td>${paciente.nome}</td>
+            <td>${paciente.idade}</td>
+            <td>${paciente.ultimaSessao}</td>
+            <td>${paciente.proximaSessao}</td>
+            <td>${paciente.objetivo}</td>
+            <td>
+              <div class="dropdown">
+                <button class=" dropdown-toggle button" type="button" data-bs-toggle="dropdown"
+                  aria-expanded="false">
+                  Ações
+                </button>
+                <ul class="dropdown-menu">
+                  <li><span class="dropdown-item" onclick="abrirModalDetalhes('${paciente.nome}')">Detalhes</span></li>
+                  <li><span class="dropdown-item" onclick="iniciarConsulta('${paciente.nome}')">Iniciar consulta</span></li>
+                  <li><span class="dropdown-item" onclick="abrirModalMensagem('${paciente.nome}')">Mensagem</span></li>
+                  <li><span class="dropdown-item" onclick="abrirModalHistorico('${paciente.nome}')">Histórico</span></li>
+                </ul>
+              </div>
+            </td> 
+          </tr>
+        `
+        tabelaPacientes.innerHTML += novaLinha;
+      }
+    }
 
     // --- Função de abrir modal genérico ---
     function abrirModal(titulo, conteudoHTML) {
@@ -175,7 +193,7 @@
 
     // --- Detalhes do paciente ---
     function abrirModalDetalhes(nome) {
-      const dados = pacientes[nome];
+      const dados = pacientes.find( paciente => paciente.nome == nome);
       if (!dados) {
         abrirModal("Detalhes do Paciente", `<em>Dados não encontrados para ${nome}.</em>`);
         return;
@@ -237,8 +255,13 @@
       const modal = document.getElementById('modal');
       if (e.target === modal) fecharModal();
     };
+
+    carregarTabela()
   </script>
 
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+    crossorigin="anonymous"></script>
 
 </body>
 

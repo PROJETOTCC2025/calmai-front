@@ -231,3 +231,46 @@ input[type="text"] {
   text-align: center;
   color: #5e4b3c;
 }
+
+.acoes-header {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  padding-top: 16px;
+}
+
+.icon-header {
+
+  font-size: 1.3rem;
+
+  color: #8B5E3C;
+
+  background-color: #FAF6F2;
+
+  border: 1px solid #C2B8AE;
+
+  padding: 8px;
+
+  border-radius: 8px;
+
+  transition: background-color 0.3s;
+
+}
+
+
+
+.icon-header:hover {
+
+  background-color: #EADAC8;
+
+}
+
+
+
+.icon-header.sair {
+
+  color: #8B0000;
+
+  border-color: #8B0000;
+
+}

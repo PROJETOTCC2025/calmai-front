@@ -7,7 +7,7 @@
   <title>Novos Clientes - Calma Aí</title>
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <link rel="stylesheet" href="../estilosGerais/menu.css">
+  <link rel="stylesheet" href="../estilosGerais/menu-superior.css">
   <link rel="stylesheet" href="../estilosGerais/header.css">
 </head>
 
@@ -17,41 +17,14 @@
     <h1>CalmaAí</h1>
   </header>
 
-  <main>
-    <h1 class="titulo">Novos Clientes</h1>
-    <div class="section">
-      <table class="clientes-tabela">
-        <tr>
-          <th>Nome</th>
-          <th>Ações</th>
-        </tr>
-        <tr>
-          <td>Joana Silva</td>
-          <td><button class="btn-aceitar">Aceitar</button> <button class="btn-recusar">Recusar</button></td>
-        </tr>
-        <tr>
-          <td>Lucas Andrade</td>
-          <td><button class="btn-aceitar">Aceitar</button> <button class="btn-recusar">Recusar</button></td>
-        </tr>
-        <tr>
-          <td>Mariana Costa</td>
-          <td><button class="btn-aceitar">Aceitar</button> <button class="btn-recusar">Recusar</button></td>
-        </tr>
-        <tr>
-          <td>Ricardo Souza</td>
-          <td><button class="btn-aceitar">Aceitar</button> <button class="btn-recusar">Recusar</button></td>
-        </tr>
-      </table>
-    </div>
-  </main>
-  <!-- MENU INFERIOR -->
+  <!-- MENU -->
   <nav class="menu-app">
-    <a href="profissionalindex.html" class="menu-item ativo">
+    <a href="profissionalindex.html" class="menu-item">
       <i class="fa-solid fa-house"></i>
       <span>Início</span>
     </a>
 
-    <a href="novos-clientes.html" class="menu-item">
+    <a href="novos-clientes.html" class="menu-item ativo">
       <i class="fa-solid fa-user-plus"></i>
       <span>Novos Clientes</span>
     </a>
@@ -68,8 +41,82 @@
 
   </nav>
 
+  <main>
+    <h1 class="titulo">Novos Clientes</h1>
+    <div class="section">
+      <table class="clientes-tabela" id="novosClientes">
+        <tr>
+          <th>Nome</th>
+          <th>Idade</th>
+          <th>Objetivo</th>
+          <th>Ações</th>
+        </tr>
+      </table>
+    </div>
+  </main>
 
-  <script src="script.js"></script>
+  <script>
+
+    let pacientes = [
+      {
+        nome: 'Joana Silva',
+        idade: 9,
+        ultimaSessao: "N/A",
+        proximaSessao: "A definir",
+        objetivo: "Reduzir ansiedade"
+      },
+      {
+        nome: 'Pedro Andrade',
+        idade: 25,
+        ultimaSessao: "N/A",
+        proximaSessao: "A definir",
+        objetivo: "TOC"
+      },
+      {
+        nome: 'Mariana Costa',
+        idade: 74,
+        ultimaSessao: "N/A",
+        proximaSessao: "A definir",
+        objetivo: "TAG"
+      },
+      {
+        nome: 'Ricardo Souza',
+        idade: 53,
+        ultimaSessao: "N/A",
+        proximaSessao: "A definir",
+        objetivo: "Bournout"
+      },
+    ];
+
+    function recusar(nome) {
+      alert(nome + ' com atendimento recusado!')
+      pacientes = pacientes.filter(paciente => paciente.nome != nome)
+      carregarTabela()
+    }
+
+    function carregarTabela() {
+      const tabelaPacientes = document.getElementById('novosClientes');
+      tabelaPacientes.innerHTML = ''
+
+      for (let paciente of pacientes) {
+        const novaLinha = `
+          <tr>
+            <td>${paciente.nome}</td>
+            <td>${paciente.idade}</td>
+            <td>${paciente.objetivo}</td>
+            <td>
+              <button class="btn-aceitar">Aceitar</button>
+              <button class="btn-recusar" onclick="recusar('${paciente.nome}')">Recusar</button>
+            </td> 
+          </tr>
+        `
+        tabelaPacientes.innerHTML += novaLinha;
+      }
+    }
+
+    carregarTabela()
+
+  </script>
 </body>
 
 </html>

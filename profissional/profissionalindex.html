@@ -7,7 +7,7 @@
   <title>Calma Aí - Início</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="../estilosGerais/menu.css">
+  <link rel="stylesheet" href="../estilosGerais/menu-superior.css">
   <link rel="stylesheet" href="../estilosGerais/header.css">
 </head>
 
@@ -16,38 +16,7 @@
     <h1>CalmaAí</h1>
   </header>
 
-  <main class="container">
-    <div class="profile">
-      <img src="https://png.pngtree.com/png-clipart/20190516/original/pngtree-users-vector-icon-png-image_3725294.jpg"
-        alt="Foto do Psicólogo" />
-      <h2>Dr. Pedro Lima 👋</h2>
-    </div>
-
-    <!-- CALENDÁRIO -->
-    <div class="section">
-      <div class="section-title">Agenda Mensal</div>
-      <div class="calendar-header">
-        <div>Dom</div>
-        <div>Seg</div>
-        <div>Ter</div>
-        <div>Qua</div>
-        <div>Qui</div>
-        <div>Sex</div>
-        <div>Sab</div>
-      </div>
-      <div class="calendar" id="calendar"></div>
-      <p class="no-selection" id="selected-day">Nenhum dia selecionado</p>
-    </div>
-
-    <!-- PRÓXIMAS SESSÕES -->
-    <div class="section">
-      <div class="section-title">Próximas Sessões</div>
-      <div class="session">07/11 - 14h com Cassia Starling</div>
-      <div class="session">07/11 - 16h com Renata Brunner</div>
-    </div>
-  </main>
-
-  <!-- MENU INFERIOR -->
+  <!-- MENU -->
   <nav class="menu-app">
     <a href="profissionalindex.html" class="menu-item ativo">
       <i class="fa-solid fa-house"></i>
@@ -70,6 +39,50 @@
     </a>
 
   </nav>
+
+  <main class="container">
+
+    <div class="container">
+
+      <div class="acoes-header">
+        <a href="../faleconosco/faleconosco.html" class="icon-header" title="Fale Conosco">
+          <i class="fa-solid fa-comment-dots"></i>
+        </a>
+
+        <a href="../TelaAcesso/TelaDeAcesso.html" class="icon-header sair" title="Sair">
+          <i class="fa-solid fa-right-from-bracket"></i>
+        </a>
+      </div>
+
+      <div class="profile">
+        <img src="https://png.pngtree.com/png-clipart/20190516/original/pngtree-users-vector-icon-png-image_3725294.jpg"
+          alt="Foto do Psicólogo" />
+        <h2>Dr. Pedro Lima 👋</h2>
+      </div>
+
+      <!-- CALENDÁRIO -->
+      <div class="section">
+        <div class="section-title">Agenda Mensal</div>
+        <div class="calendar-header">
+          <div>Dom</div>
+          <div>Seg</div>
+          <div>Ter</div>
+          <div>Qua</div>
+          <div>Qui</div>
+          <div>Sex</div>
+          <div>Sab</div>
+        </div>
+        <div class="calendar" id="calendar"></div>
+        <p class="no-selection" id="selected-day">Nenhum dia selecionado</p>
+      </div>
+
+      <!-- PRÓXIMAS SESSÕES -->
+      <div class="section">
+        <div class="section-title">Próximas Sessões</div>
+        <div class="session">07/11 - 14h com Cassia Starling</div>
+        <div class="session">07/11 - 16h com Renata Brunner</div>
+      </div>
+  </main>
 
   <script src="script.js"></script>
 </body>
